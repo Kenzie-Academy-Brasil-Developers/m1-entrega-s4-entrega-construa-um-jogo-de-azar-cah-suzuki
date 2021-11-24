@@ -116,15 +116,17 @@ a:hover {
 
 
 #cacapalavras {
-    display: flex;
+    display: grid;
     margin-left: 600px;
     margin-top: 5px;
     padding: 20px;
-    height: 350px;
+    height: 540px;
     width: 500px;
     border-radius:10px;
     background-color: #2b1d5a93;
     color: white;
+    grid-template-columns: repeat(10,auto);
+
 }
 
 label {
@@ -153,3 +155,10 @@ p {
     text-shadow: black 0.1em 0.1em 0.2em;
 }
 
+
+section{
+    background-color: #2b1d5a93;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}

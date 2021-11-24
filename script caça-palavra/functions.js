@@ -1,4 +1,4 @@
-let main = document.querySelector('section')
+let main = document.querySelector('#cacapalavras')
 
 // array de possiveis palavras 
 let palavrasRaiz = ['bigbang', 'cosmos','universo','estrela','explosão','andromeda']
@@ -138,7 +138,7 @@ for(let i = 0 ; i < test.length; i++){
 
     for(let i of tal){
         for(let j of i){
-          let div = document.createElement('div')
+          let div = document.createElement('section')
           div.innerText = j
           main.appendChild(div)
         }
@@ -151,10 +151,7 @@ for(let i = 0 ; i < test.length; i++){
         }
     }
 
-    function removeLetter(e){
-        let letra = e.target
-        
-    }
+
 
     let divs = document.querySelectorAll('div')
     for(let i of divs){
@@ -169,7 +166,6 @@ for(let i = 0 ; i < test.length; i++){
             }
         })
         i.addEventListener('click',winCondition)
-        i.addEventListener('dblclick',removeLetter)
     }
 }
 
@@ -179,7 +175,7 @@ for(let i = 0 ; i < test.length; i++){
 
 function reset(){
     score = []
-    let divs = document.querySelectorAll('div')
+    let divs = document.querySelectorAll('section')
     for(let i of divs){
         main.removeChild(i)
         }
