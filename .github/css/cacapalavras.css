@@ -22,7 +22,8 @@ h2 {
 img {
     /* margin-top: -50px;
     margin-left: 35px; */
-    height: 20px;
+    height: 35px;
+    margin-right: 20px;
 }
 
 h3.regrash3 {
@@ -53,6 +54,7 @@ a {
 
 a:hover {
     color:#a296ca;
+    text-decoration: underline;
 }
 
 /* .user {
@@ -117,8 +119,10 @@ input {
 div.dificuldade {
     display: flex;
     flex-direction: row;
-    /* margin-left: 50px; */
+    background-color: #008000c4;
+    padding: 10px;
     margin-right: 50px;
+    border:black 5px solid;
 }
 
 p {
@@ -158,7 +162,7 @@ header{
 
 }
 .regrasText{
-    margin: 10px;
+    margin: 25px;
 }
 #pts{
     width: 50px;
@@ -172,10 +176,17 @@ header{
 }
 
 .rstBtn{
-    border: green 5px solid;
+    border: black 3px solid;
     border-radius: 15px;
     background-color: rgba(0, 55, 128, 0.418);
     color: white;
     padding: 10px;
     font-size: 16px;
+    background-color: green;
+}
+.dificuldade p{
+    font-size: 25px;
+    font-weight: bold;
+    align-self: end;
+    margin-left: 20px;
 }
