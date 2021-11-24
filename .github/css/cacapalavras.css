@@ -4,6 +4,8 @@ body {
     background-image: url(/imgcacapalavras/img/galaxy2.jpg);
     background-size: cover;
     font-family: 'Lora',serif;
+    display: flex;
+    flex-flow: column;
 }
 
 h2 {
@@ -18,9 +20,9 @@ h2 {
 }
 
 img {
-    margin-top: -50px;
-    margin-left: 35px;
-    width: 23px;
+    /* margin-top: -50px;
+    margin-left: 35px; */
+    height: 20px;
 }
 
 h3.regrash3 {
@@ -28,46 +30,42 @@ h3.regrash3 {
     font-family: 'Lora',serif;
     color: #b0a8ce;
     text-shadow: black 0.1em 0.1em 0.2em;
-    margin-left: 115px;
-    margin-top: 15px;
+
 }
 
-h3.palavrastext {
+/* h3.palavrastext {
     font-size: 21px;
     font-family: 'Lora',serif;
     color: white;
     margin-left: 195px;
-}
+} */
 
 
 a {
     color: white;
     font-family: 'Lora',serif;
-    font-size: 16px;
+    font-size: 25px;
     text-decoration: none;
     margin-left: 22px;
     margin-top: 5px;
+
 }
 
 a:hover {
     color:#a296ca;
 }
 
-.user {
+/* .user {
     display: flex;
     justify-content: flex-end;
     margin-right: 200px;
     margin-top: -60px;
-}
+} */
 
 
 #regras {
     display: flex;
     margin-left: 130px;
-    margin-bottom: -350px;
-    margin-top: 120px;
-    height: 300px;
-    width: 300px;
     background-color: #2b1d5a93;
     border-radius: 10px;
     color: white;
@@ -76,40 +74,10 @@ a:hover {
 #box-regras {
     display: flex;
     margin-top: 55px;
-    margin-left: -135px;
+    align-self: center;
 }
 
-.regrastext {
-    margin-top: 10px;
-    margin-bottom: 30px;
-}
 
-.facil {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-}
-
-.dificil {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-
-}
-
-.medio {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-
-}
-
-.superdificil {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-
-}
 
 .escondido {
     visibility: hidden;
@@ -118,11 +86,10 @@ a:hover {
 
 #cacapalavras {
     display: grid;
-    margin-left: 600px;
     margin-top: 5px;
     padding: 20px;
     height: 540px;
-    width: 500px;
+    min-width: 500px;
     border-radius:10px;
     background-color: #2b1d5a93;
     color: white;
@@ -134,26 +101,30 @@ label {
     color: white;
     text-shadow: #b0a8ce 0.1em 0.1em 0.2em;
     font-family: 'Lora',serif;
-    font-size: 16px;
-    margin-top: -20px;
-    margin-right: -125px;
+    font-size: 18px;
+    /* margin-top: -20px;
+    margin-right: -125px; */
+    margin-right: 20px;
 }
 
 input {
     background-color: #a296cacb;
     border: 1px solid black;
     border-radius: 10px;
-    margin-right: 60px;
+    margin-right: 20px;
 }
 
 div.dificuldade {
     display: flex;
-    flex-direction: column;
-    margin-left: 50px;
+    flex-direction: row;
+    /* margin-left: 50px; */
+    margin-right: 50px;
 }
 
 p {
     text-shadow: black 0.1em 0.1em 0.2em;
+    color: white;
+    font-size: 20px;
 }
 
 
@@ -166,10 +137,45 @@ section{
 div{
     border-radius: 15px;
 }
-.rstBtn{
-    margin: 0;
+
+header{
+    display: flex;
+    margin-top: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.facil{
+    max-width: 350px;
+    margin-right: 200px;
+    margin-top: 100px;
     background-color: #2b1d5a93;
-    color: white;
-    border: green 1px solid;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+
+}
+.regrasText{
+    margin: 10px;
+}
+#pts{
+    width: 50px;
+    height: 35px;
+    font-size: 30px;
+    text-align: center;
+}
+.pontos{
+    display: flex;
+    align-items: center;
+}
+
+.rstBtn{
+    border: green 5px solid;
     border-radius: 15px;
+    background-color: rgba(0, 55, 128, 0.418);
+    color: white;
+    padding: 10px;
+    font-size: 16px;
 }

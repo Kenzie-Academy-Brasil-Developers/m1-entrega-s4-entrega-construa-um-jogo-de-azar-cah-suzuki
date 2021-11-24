@@ -10,50 +10,38 @@
     <script src="/script caça-palavra/functions.js" defer></script>
 </head>
 <body>
-    
-    <h2>Escolha a dificuldade</h2> 
+<header>
+    <!-- <h2>Escolha a dificuldade</h2>  -->
     <img src="/imgcacapalavras/img/favicon-32x32.png">
 
 <div class="dificuldade">
     <a id='dfacil' href="#">Fácil</a>
     <a id='dmedio' href="#">Médio</a>
     <a id='ddificil' href="#">Difícil</a>
-    <a id='dsdificil' href="#">Super Difícil</a>
 </div>
 
-    <div class="user">
+<div class="user">
     <label for="user">Usuário</label>
     <input type="text" id="user" name="user">
+</div>
+<div class="pontos">
     <label for="pts">Pontuação</label>
     <input type="text" id="pts" name="pts">
+</div>
     <button class='rstBtn'>Reset</button>
 </div>
+</header>
 
-<div id="regras">
-    <h3 class="regrash3">Regras</h3>
     <div id="box-regras">
         <div class="facil">
-            <p class="regrastext">Três palavras estão escondidas neste emaranhado de letras, as palavras estão dispostas em direções diferentes de acordo com a dificuldade. Será que você consegue encontrar? Clique e pinte os quadradinhos.</p>
-            <p>Fácil: Palavras na horizontal</p>
+            <h3 class="regrash3">Regras:</h3>
+            <p class="regrasText">Três palavras estão escondidas neste emaranhado de letras, as palavras estão dispostas em direções diferentes de acordo com a dificuldade. Será que você consegue encontrar? Clique e pinte os quadradinhos.</p>
+            <p>Fácil:   1 palavra (5 pts)</p>
+            <p>Medio:   2 palavras (10 pts)</p>
+            <p>Dificil: 3 palavras (15 pts)</p>
         </div>
-        <div class="medio escondido">
-            <p class="regrastext">Três palavras estão escondidas neste emaranhado de letras, as palavras estão dispostas em direções diferentes de acordo com a dificuldade. Será que você consegue encontrar? Clique e pinte os quadradinhos.</p>
-            <p>Médio: Palavras na vertical </p>
-        </div>
-        <div class="dificil escondido">
-            <p class="regrastext">Três palavras estão escondidas neste emaranhado de letras, as palavras estão dispostas em direções diferentes de acordo com a dificuldade. Será que você consegue encontrar? Clique e pinte os quadradinhos. </p>
-            <p>Difícil: Uma palavra na horizontal, uma na vertical e outra na diagonal</p>
-        </div>
-        <div class="superdificil escondido">
-            <p class="regrastext">Três palavras estão escondidas neste emaranhado de letras, as palavras estão dispostas em direções diferentes de acordo com a dificuldade. Será que você consegue encontrar? Clique e pinte os quadradinhos. </p>
-            <p>Super difícil: Uma palavra na horizontal, uma na vertical e outra na diagonal (todas de trás para frente)</p>
-        </div>
+
+<div id="cacapalavras"></div>
     </div>
-</div>
-
-<div id="cacapalavras">
-    
-</div>
-
 </body>
 </html>
