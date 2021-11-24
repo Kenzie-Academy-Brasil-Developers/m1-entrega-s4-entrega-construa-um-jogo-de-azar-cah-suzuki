@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/jokenpo.css">
+    <title>Jogos de Azar</title>
+</head>
+<body>
+    <header>
+        <figure>
+            <img src="img/logo.png" alt="Logo galaxy">
+            <figcaption>Logo galaxy</figcaption>
+        </figure>
+        <h1>Pedra Papel Tesoura</h1>
+    </header>
+    <main>
+    <div class="container-acima">
+        <div class="regras">
+            <h3>Regras</h3>
+            <p>
+                "Pedra vence de papel e perde para papel
+                Papel vence de pedra e perde para tesoura
+                Tesoura vence de papel e perde para pedra"
+            </p>
+            <p>
+                Levando isso em consideração faça sua escolha e clique no card para tentar a sorte!!
+            </p>
+
+        </div>
+        <div class="jogador">
+            <span>Jogador: </span>
+            <span>Pc</span>
+
+        </div>
+        <div class="pc-info">
+            <div class="flip" id="cardUm">
+                <div class="card face" id="frontUm">
+                    <figure>
+                        <img src="img/pc.png" alt="Ilustração pc">
+                        <figcaption>Ilustração pc</figcaption>
+                    </figure>
+                </div>
+                <div class="card face" id="backUm">
+                    <figure>
+                        <img src="img/pedra.png" alt="Ilustração pedra">
+                        <figcaption>Ilustração pedra</figcaption>
+                    </figure>
+                </div>
+              
+            </div>
+
+            <div class="flip" id="cardDois" >
+                <div class ="card face" id="frontDois">
+                    <figure>
+                        <img src="img/pc.png" alt="Ilustração pc">
+                        <figcaption>Ilustração pc</figcaption>
+                    </figure>
+                </div>
+                <div class="card face" id="backDois">
+                    <figure>
+                        <img src="img/papel.png" alt="Ilustração papel">
+                        <figcaption>Ilustração papel</figcaption>
+                    </figure>
+
+                </div>
+            </div>
+
+            <div class="flip" id="cardTres">
+                <div  class="card face" id="frontTres">
+                    <figure>
+                        <img src="img/pc.png" alt="Ilustração pc">
+                        <figcaption>Ilustração pc</figcaption>
+                    </figure>
+                </div>
+                <div class="face" id="backTres">
+                    <figure>
+                        <img src="img/tesoura.png" alt="Ilustração tesoura">
+                        <figcaption>Ilustração tesoura</figcaption>
+                    </figure>
+
+                </div>
+            </div>
+        </div>
+      
+<!-- Acrescentar essa label ao index html
+            <label>Jogador: </label>
+            <input type="text" name="name" id="nameUser" placeholder="Digite seu nome ou apelido" onchange="handleChange()"> -->
+   
+<!-- 
+        <a href="page.html" id="link1">Link</a> -->
+
+    </div>
+    <div class="container-abaixo">
+        <div class="jogador">
+            <span>Jogador: </span>
+            <span>Camila</span>
+
+        </div>
+        <div class="card player-pedra">
+            
+        </div>
+    </div>
+</main>
+
+   <script>
+    const card =document.querySelector("#cardUm")
+    const cardDois = document.querySelector("#cardDois")
+    const cardTres = document.querySelector("#cardTres")
+
+    card.addEventListener("click",(e)=>{
+        card.classList.toggle("flip")
+    })
+
+    cardDois.addEventListener("click",(e)=>{
+        cardDois.classList.toggle("flip")
+    })
+
+    cardTres.addEventListener("click",(e)=>{
+        cardTres.classList.toggle("flip")
+    })
+</script>
+
+<footer>
+
+</footer>
+  <script src="js/jokenpo.js"></script>
+</body>
+</html>
