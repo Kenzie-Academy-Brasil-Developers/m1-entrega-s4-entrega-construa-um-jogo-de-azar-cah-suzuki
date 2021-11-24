@@ -5,7 +5,8 @@ let palavrasRaiz = ['bigbang', 'cosmos','universo','estrela','explosão','androm
 
 //array para add as palavras selecionadas pelo jogador
 let palavrasSelecionadas = []
-
+let resposta = ''
+let score = []
 //funcao que gera uma letra aleatória de a-z
 function randomLetter (){
     min = 97;
@@ -143,31 +144,47 @@ for(let i = 0 ; i < test.length; i++){
         }
     }
       
-    
+    function winCondition(){
+        if(score.length === 3){
+            alert()
+            reset()
+        }
+    }
+
+    function removeLetter(e){
+        let letra = e.target
+        
+    }
+
     let divs = document.querySelectorAll('div')
     for(let i of divs){
         i.addEventListener('click',(e) => {
             let div = e.target
             div.style.backgroundColor= 'green'
-            console.log(tal[1].indexOf(div.innerText))
+            console.log(div.innerText)
+            resposta += div.innerText
+            if(palavrasSelecionadas.includes(resposta)){
+                score.push(resposta)
+                resposta = ''
+            }
         })
+        i.addEventListener('click',winCondition)
+        i.addEventListener('dblclick',removeLetter)
     }
 }
 
 
 
-// function winCondition(){
-//     if(palavrasSelecionadas.includes('casa')){
-//         console.log('win')
-//     }
-// }
+
 
 function reset(){
+    score = []
     let divs = document.querySelectorAll('div')
     for(let i of divs){
         main.removeChild(i)
         }
     tal = tabela()
+    
     palavraTabela()
 }
 
