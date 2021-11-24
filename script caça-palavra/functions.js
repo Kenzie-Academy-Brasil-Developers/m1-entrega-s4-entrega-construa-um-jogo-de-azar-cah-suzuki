@@ -153,13 +153,14 @@ for(let i = 0 ; i < test.length; i++){
 
 
 
-    let divs = document.querySelectorAll('div')
+    let divs = document.querySelectorAll('section')
     for(let i of divs){
         i.addEventListener('click',(e) => {
             let div = e.target
             div.style.backgroundColor= 'green'
             console.log(div.innerText)
             resposta += div.innerText
+            console.log(div)
             if(palavrasSelecionadas.includes(resposta)){
                 score.push(resposta)
                 resposta = ''
