@@ -166,4 +166,10 @@ section{
 div{
     border-radius: 15px;
 }
-
+.rstBtn{
+    margin: 0;
+    background-color: #2b1d5a93;
+    color: white;
+    border: green 1px solid;
+    border-radius: 15px;
+}
