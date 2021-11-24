@@ -6,11 +6,7 @@
 
 // console.log(numeroAleatorio(1,10))
 
-//Localiza os parametros passados na URL e já me retorna o equivalente ao name 
-// const queryString = window.location.search;
-// const urlParams = new URLSearchParams(queryString);
-// let userName = urlParams.get("name")
-// console.log(userName)
+
 
 
 const inputUserName = document.querySelector("#nameUser");
@@ -24,4 +20,13 @@ function handleChange(){
 }
 
 inputUserName.addEventListener('change', handleChange);
+
+const cardUm = document.querySelector("#cardUm")
+cardUm.addEventListener("click",(e)=>{
+    cardUm.classList.toggle("flip")
+})
+
+
+
+
 
