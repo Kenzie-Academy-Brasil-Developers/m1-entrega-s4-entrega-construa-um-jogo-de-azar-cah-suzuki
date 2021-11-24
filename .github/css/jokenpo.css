@@ -15,7 +15,7 @@ img{
 }
 
 figure{
-    width: 150px;
+    width: 100px;
     display: flex;
     align-items: center;
     margin: 0;
@@ -51,6 +51,33 @@ figure{
 }
 
 #cardTres{
+    display: flex;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transition: all .5s;
+    margin-bottom: 250px;
+
+}
+
+#cardQuatro{
+    display: flex;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transition: all .5s;
+    margin-bottom: 250px;
+
+}
+
+#cardCinco{
+    display: flex;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transition: all .5s;
+    margin-bottom: 250px;
+
+}
+
+#cardSeis{
     display: flex;
     justify-content: center;
     transform-style: preserve-3d;
@@ -104,12 +131,46 @@ figure{
     border-radius: 10%;
 }
 
+#frontQuatro{
+    background-color: aquamarine;
+    transform: rotateY(180deg);
+    border-radius: 10%;
+}
+
+#backQuatro{
+   background-color: blue;
+    backface-visibility: hidden;
+    border-radius: 10%;
+}
+
+#frontCinco{
+    background-color: aquamarine;
+    transform: rotateY(180deg);
+    border-radius: 10%;
+}
+
+#backCinco{
+   background-color: blue;
+    backface-visibility: hidden;
+    border-radius: 10%;
+}
+
+#frontSeis{
+    background-color: aquamarine;
+    transform: rotateY(180deg);
+    border-radius: 10%;
+}
+
+#backSeis{
+   background-color: blue;
+    backface-visibility: hidden;
+    border-radius: 10%;
+}
+
 
 .flip{
     transform: rotateY(180deg);
 }
-
-
 
 
 .card:hover{
@@ -134,6 +195,10 @@ header{
     text-align: center;
     background-color: aqua;
     margin: 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 header h1{
     margin: 0;
@@ -141,4 +206,15 @@ header h1{
 
 .jogador{
     margin-bottom: 20px;
+}
+
+@media screen and (min-width:800px){
+ header{
+     justify-content: flex-start;
+ }
+
+ figure{
+     margin-right: 200px;
+ }
+    
 }
