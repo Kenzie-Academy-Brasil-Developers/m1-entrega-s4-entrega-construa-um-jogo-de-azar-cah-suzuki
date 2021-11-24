@@ -3,6 +3,7 @@
 body {
     background-image: url(/imgcacapalavras/img/galaxy2.jpg);
     background-size: cover;
+    font-family: 'Lora',serif;
 }
 
 h2 {
@@ -162,3 +163,7 @@ section{
     line-height: 50px;
     text-align: center;
 }
+div{
+    border-radius: 15px;
+}
+

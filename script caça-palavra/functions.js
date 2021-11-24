@@ -1,9 +1,11 @@
 let main = document.querySelector('#cacapalavras')
+let dif = document.querySelector('.dificuldade')
 
 // array de possiveis palavras 
 let palavrasRaiz = ['bigbang', 'cosmos','universo','estrela','explosão','andromeda']
 
 //array para add as palavras selecionadas pelo jogador
+let numeroDePalavras = 0
 let palavrasSelecionadas = []
 let resposta = ''
 let score = []
@@ -38,6 +40,7 @@ function palavraTabela(){
     let coluna = randomNum()
     let test = palavras.splice([Math.floor(Math.random()* palavras.length)],1).join('').split('')
     palavrasSelecionadas.push(test.join(''))
+    numeroDePalavras = 1
     
 
 
@@ -145,7 +148,7 @@ for(let i = 0 ; i < test.length; i++){
     }
       
     function winCondition(){
-        if(score.length === 3){
+        if(score.length === numeroDePalavras){
             alert()
             reset()
         }
@@ -171,8 +174,17 @@ for(let i = 0 ; i < test.length; i++){
 }
 
 
-
-
+dif.addEventListener('click',(e)=> {
+    let link = e.target
+    if(link.id === 'dfacil'){console.log(link)
+    }else if(link.id ==='dmedio'){
+        console.log(link)
+    }else if(link.id === 'ddificil'){
+        console.log(link)
+    }else if(link.id === 'dsdificil'){
+        console.log('super dificil')
+    }
+})
 
 function reset(){
     score = []
