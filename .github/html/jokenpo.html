@@ -16,7 +16,6 @@
         <h1>Pedra Papel Tesoura</h1>
     </header>
     <main>
-    <div class="container-acima">
         <div class="regras">
             <h3>Regras</h3>
             <p>
@@ -29,6 +28,8 @@
             </p>
 
         </div>
+    <div class="container-acima">
+  
         <div class="jogador">
             <span>Jogador: </span>
             <span>Pc</span>
@@ -158,28 +159,47 @@
     const cardCinco = document.querySelector("#cardCinco")
     const cardSeis = document.querySelector("#cardSeis")
 
-    card.addEventListener("click",(e)=>{
-        card.classList.toggle("flip")
-    })
-
-    cardDois.addEventListener("click",(e)=>{
-        cardDois.classList.toggle("flip")
-    })
-
-    cardTres.addEventListener("click",(e)=>{
-        cardTres.classList.toggle("flip")
-    })
-
-    cardQuatro.addEventListener("click",(e)=>{
-        cardQuatro.classList.toggle("flip")
+      cardQuatro.addEventListener("click",(e)=>{
+                
+        if (!cardQuatro.classList.contains("flip")) {
+            cardQuatro.classList.toggle("flip")
+        }
+        if (cardCinco.classList.contains("flip")){
+            cardCinco.classList.toggle("flip")
+        }
+        if (cardSeis.classList.contains("flip")){
+            cardSeis.classList.toggle("flip")
+        }
     })
 
     cardCinco.addEventListener("click",(e)=>{
-        cardCinco.classList.toggle("flip")
+        if (!cardCinco.classList.contains("flip")) {
+            cardCinco.classList.toggle("flip")
+        }
+        if (cardQuatro.classList.contains("flip")){
+            cardQuatro.classList.toggle("flip")
+        }
+        if (cardSeis.classList.contains("flip")){
+            cardSeis.classList.toggle("flip")
+        }
+     
+  
+     
     })
 
     cardSeis.addEventListener("click",(e)=>{
-        cardSeis.classList.toggle("flip")
+        let local=e.currentTarget
+        console.log(local)
+      
+        if (!cardSeis.classList.contains("flip")) {
+            cardSeis.classList.toggle("flip")
+        }
+        if (cardQuatro.classList.contains("flip")){
+            cardQuatro.classList.toggle("flip")
+        }
+        if (cardCinco.classList.contains("flip")){
+            cardCinco.classList.toggle("flip")
+        }
     })
 </script>
 
