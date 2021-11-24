@@ -159,7 +159,34 @@
     const cardCinco = document.querySelector("#cardCinco")
     const cardSeis = document.querySelector("#cardSeis")
 
+    const arrayCardsPc = ["cardUm","cardDois","cardTres"]
+    
+     //  cardDois
+
+    // let idDoCard=card.id
+    // console.log(idDoCard)
+    function cardRandomico(arrayCardsPc){
+        let cardRandomico = arrayCardsPc[Math.floor(Math.random() * (3 - 0)) + 0];
+        console.log(cardRandomico)
+        return cardRandomico
+    }
+
+  
+
       cardQuatro.addEventListener("click",(e)=>{
+      if (cardRandomico(arrayCardsPc).valueOf() === cardUm.id){
+           console.log(cardRandomico)
+           cardUm.classList.toggle("flip")
+      }else if (cardRandomico(arrayCardsPc).valueOf() === cardDois.id){
+        console.log(cardRandomico)
+        cardDois.classList.toggle("flip")
+
+      } else {
+        console.log(cardRandomico)
+        cardTres.classList.toggle("flip")
+
+      }
+    
                 
         if (!cardQuatro.classList.contains("flip")) {
             cardQuatro.classList.toggle("flip")
