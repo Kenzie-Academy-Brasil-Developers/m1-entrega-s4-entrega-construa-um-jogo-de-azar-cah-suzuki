@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/jokenpo.css">
+    <title>Jogos de Azar</title>
+</head>
+<body>
+    <div class="container-acima">
+        <div class="regras">
+            <p>
+                "Pedra vence de papel e perde para papel
+                Papel vence de pedra e perde para tesoura
+                Tesoura vence de papel e perde para pedra"
+            </p>
+            <p>
+                Levando isso em consideração faça sua escolha e clique no card para tentar a sorte!!
+            </p>
+
+        </div>
+        <div class="pc-info">
+            <div class="pc-card-pedra hide">
+                <figure>
+                    <img src="img/pedra.png" alt="Ilustração pedra">
+                    <figcaption>Ilustração pedra</figcaption>
+                </figure>
+            </div>
+            <div class="pc-card-papel hide">
+                <figure>
+                    <img src="img/papel.png" alt="Ilustração papel">
+                    <figcaption>Ilustração papel</figcaption>
+                </figure>
+            </div>
+            <div class="pc-card-tesoura hide">
+                <figure>
+                    <img src="img/tesoura.png" alt="Ilustração tesoura">
+                    <figcaption>Ilustração tesoura</figcaption>
+                </figure>
+            </div>
+
+        </div>
+        <div class="player-info">
+            <label>Jogador: </label>
+            <label>Camila</label>
+            <label>Pontuação</label>
+
+        </div>
+
+            <label>Jogador: </label>
+            <input type="text" name="name" id="nameUser" placeholder="Digite seu nome ou apelido" onchange="handleChange()">
+   
+
+        <a href="page.html" id="link1">Link</a>
+
+    </div>
+    <div class="container-abaixo">
+        <div id="player-card-pedra">
+            <figure>
+                <img src="img/pedra.png" alt="Ilustração pedra">
+                <figcaption>Ilustração pedra</figcaption>
+            </figure>
+        </div>
+        <div id="player-card-papel">
+            <figure>
+                <img src="img/papel.png" alt="Ilustração papel">
+                <figcaption>Ilustração papel</figcaption>
+            </figure>
+        </div>
+        <div id="player-card-tesoura">
+            <div class="pc-card-tesoura">
+                <figure>
+                    <img src="img/tesoura.png" alt="Ilustração tesoura">
+                    <figcaption>Ilustração tesoura</figcaption>
+                </figure>
+            </div>
+        </div>
+
+    </div>
+  <script src="js/jokenpo.js"></script>
+</body>
+</html>
