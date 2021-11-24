@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script&family=Lato:wght@100&family=Lora:ital,wght@0,400;1,400;1,500&family=Montserrat:wght@100&family=PT+Sans+Narrow&family=Playfair+Display&display=swap');
+
+body {
+    background-image: url(/assets/img/galaxy2.jpg);
+    background-size: cover;
+}
+
+h2 {
+    font-size: 23px;
+    font-family: 'Lora',serif;
+    color: white;
+    margin-top: 30px;
+    margin-left: 70px;
+    margin-bottom: -12px;
+
+}
+
+img {
+    margin-top: -50px;
+    margin-left: 35px;
+    width: 23px;
+}
+
+h3.regrastext {
+    font-size: 21px;
+    font-family: 'Lora',serif;
+    color: white;
+    margin-left: 115px;
+    margin-top: 15px;
+}
+
+h3.palavrastext {
+    font-size: 21px;
+    font-family: 'Lora',serif;
+    color: white;
+    margin-left: 195px;
+}
+
+a {
+    color: white;
+    font-family: 'Lora',serif;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 22px;
+    margin-top: 5px;
+}
+
+a:hover {
+    color:#a296ca;
+}
+
+.user {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 250px;
+    margin-top: -60px;
+}
+
+
+#regras {
+    display: flex;
+    margin-left: 130px;
+    margin-bottom: -350px;
+    margin-top: 120px;
+    height: 300px;
+    width: 300px;
+    background-color: #2b1d5a93;
+    border-radius: 10px;
+    color: white;
+    
+}
+
+#cacapalavras {
+    display: flex;
+    margin-left: 600px;
+    margin-top: 5px;
+    padding: 20px;
+    height: 400px;
+    width: 500px;
+    border-radius:10px;
+    background-color: #2b1d5a93;
+    color: white;
+}
+
+label {
+    color: white;
+    font-family: 'Lora',serif;
+    font-size: 16px;
+    margin-top: -20px;
+    margin-right: -125px;
+}
+
+input {
+    background-color: #a296cacb;
+    border-radius: 10px;
+}
+
+div.dificuldade {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+
