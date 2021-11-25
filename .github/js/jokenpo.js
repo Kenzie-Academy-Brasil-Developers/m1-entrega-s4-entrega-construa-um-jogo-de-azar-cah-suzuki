@@ -7,6 +7,8 @@ console.log(userName)
 
 const outputNomeJogador = document.getElementById("nome-jogador")
 outputNomeJogador.innerHTML=userName
+const outputNomeJogadorModal = document.getElementById("nome-jogador-modal")
+outputNomeJogadorModal.innerHTML=userName
 
 
 

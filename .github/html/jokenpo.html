@@ -30,10 +30,12 @@
         </div>
 
         <div class="modal-bg">
-            <div class="modal" >
-                <div id="modal-result"></div>
+            <div class="modal">
+                <span id="nome-jogador-modal"></span>
+                <p>Resultado da partida: </p>
+                <div id="modal-result"></div>               
                 
-                <button class="modal-btn">Modal</button>
+                <button class="modal-btn">Sair / Jogar Novamente!</button>
             </div>
         </div>
         <div class=container-dos-containers-dos-cards>
@@ -216,19 +218,19 @@
     function winOrLose(currentEscolha,currentPc){
           let message = ""
         if (currentEscolha === currentPc){
-           message ="Empate!!"
+           message ="A partida deu empate!!"
         } else if (currentEscolha === "pedra" && currentPc === "papel"){
-            message ="Perdeu!!"
+            message ="Você Perdeu!!"
         } else if (currentEscolha === "pedra" && currentPc === "tesoura"){
-            message ="Ganhou!!"
+            message ="Você Ganhou!!"
         } else if (currentEscolha === "papel" && currentPc === "tesoura"){
-            message ="Perdeu!!"
+            message ="Você Perdeu!!"
         } else if (currentEscolha === "papel" && currentPc === "pedra"){
-            message ="Ganhou!!"
+            message ="Você Ganhou!!"
         } else if (currentEscolha === "tesoura" && currentPc === "pedra"){
-            message ="Perdeu!!"
+            message ="Você Perdeu!!"
         } else if (currentEscolha === "tesoura" && currentPc === "papel"){
-            message ="Ganhou!!"
+            message ="Você Ganhou!!"
         }
         return message
       }

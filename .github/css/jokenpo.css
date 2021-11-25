@@ -269,7 +269,8 @@ figure{
 
 .modal{
       position: relative;
-      background-color: white;
+      background-color: rgba(60, 16, 83, .8);
+      text-shadow: 0.1em 0.1em 0.2em white;
       color: black;
       width: 60%;
       height: 30%;
@@ -280,21 +281,34 @@ figure{
       margin-left: 50px;
       border-radius: 3%;
       margin-top:50px;
+      font-size: 36px;
+      color: white;
+      border: 15px solid rgba(94, 77, 133, .3);
+}
 
+.modal p{
+    margin: 0;
 }
 
 .modal button{
       padding: 10px 30px;
-      background-color: blueviolet;
-      color: black;
+      border-radius: 5%;
+      width: 200px;
+      height: 100px;
+      background-color: rgba(94, 77, 133, 1);
+      color: white;
+      text-shadow: 0.1em 0.1em 0.2em black;
       border: none;
       cursor: pointer;
+      font-family: 'Genos', sans-serif;
+      font-size: 22px;
 }
 
 @media screen and (min-width:800px){
  main{
      font-size: 22px; 
      flex-direction: row; 
+     justify-content: space-between;
  }
 
  header{
