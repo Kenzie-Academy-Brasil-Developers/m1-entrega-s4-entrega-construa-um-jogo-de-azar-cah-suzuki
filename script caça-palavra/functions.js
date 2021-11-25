@@ -2,6 +2,8 @@ let main = document.querySelector('#cacapalavras')
 let dif = document.querySelector('.dificuldade')
 let ptn = document.querySelector('#pts')
 let btn = document.querySelector('.rstBtn')
+let wBtn = document.querySelector('.winBtn')
+let wScrn = document.querySelector('#vitoria')
 
 // array de possiveis palavras 
 let palavrasRaiz = ['bigbang', 'cosmos','universo','estrela','explosão','andromeda']
@@ -28,7 +30,6 @@ function reset(){
 
 function winCondition(){
     if(score.length === numeroDePalavras){
-        alert('Você ganhou :)')
         if(score.length === 1){
             pontuacao += 5
         }else if(score.length === 2){
@@ -39,8 +40,10 @@ function winCondition(){
         reset()
       
         pts.value = pontuacao
+        wScrn.classList.toggle('hidden')
     }
 }
+wBtn.addEventListener('click',() => wScrn.classList.toggle('hidden'))
 
 main.addEventListener('click',(e) => {
     let div = e.target
