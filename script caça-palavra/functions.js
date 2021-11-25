@@ -47,12 +47,9 @@ wBtn.addEventListener('click',() => wScrn.classList.toggle('hidden'))
 
 main.addEventListener('click',(e) => {
     let div = e.target
-    console.log(div)
     if(div.tagName === 'SECTION'){
     div.style.backgroundColor= 'green'
-    console.log(div.innerText)
     resposta += div.innerText
-    console.log(div)
     }
     if(palavrasSelecionadas.includes(resposta)){
         score.push(resposta)
@@ -96,7 +93,6 @@ function tabela(){
             arrMulti[i].push(randomLetter())
         }
     }
-    console.table(arrMulti)
     return arrMulti
 }
 
@@ -201,10 +197,9 @@ for(let i = 0 ; i < test.length; i++){
         letrasUsadas3.push([linha2,coluna2+i])
     }
 
-    console.table(tal)
-    console.log('primeiro loop' ,linha ,coluna)
-    console.log('segundo loop' ,linha2 ,coluna2)
-    console.log('terceiro loop ',linha3,coluna3)
+    console.log('diagonal' ,linha ,coluna)
+    console.log('horizontal' ,linha2 ,coluna2)
+    console.log('vertical',linha3,coluna3)
 
 
 
@@ -218,26 +213,9 @@ for(let i = 0 ; i < test.length; i++){
       
 
 
-    //loop desnecessario
-    // let divs = document.querySelectorAll('section')
-    // for(let i of divs){
-    //     i.addEventListener('click',(e) => {
-    //         let div = e.target
-    //         div.style.backgroundColor= 'green'
-    //         console.log(div.innerText)
-    //         resposta += div.innerText
-    //         console.log(div)
-    //         if(palavrasSelecionadas.includes(resposta)){
-    //             score.push(resposta)
-    //             resposta = ''
-    //         }
-    //     })
-    //     i.addEventListener('click',winCondition)
-    // }
-
  
 }
-//------------------------------
+
 
 
 
