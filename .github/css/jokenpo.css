@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Genos&display=swap');
 
+
 figcaption{
     display: none;
 }
@@ -142,7 +143,6 @@ figure{
 
 #frontUm{
     background-color: rgba(144, 99, 158, 1);
-    transform: rotateY(180deg);
     border-radius: 10%;
 }
 
@@ -154,7 +154,6 @@ figure{
 
 #frontDois{
     background-color: rgba(144, 99, 158, 1);
-    transform: rotateY(180deg);
     border-radius: 10%;
 }
 
@@ -166,7 +165,6 @@ figure{
 
 #frontTres{
     background-color: rgba(144, 99, 158, 1);
-    transform: rotateY(180deg);
     border-radius: 10%;
 }
 
@@ -178,7 +176,7 @@ figure{
 
 #frontQuatro{
     background-color: rgba(94, 77, 133, 1);
-    transform: rotateY(180deg);
+   
     border-radius: 10%;
 }
 
@@ -190,7 +188,7 @@ figure{
 
 #frontCinco{
     background-color: rgba(94, 77, 133, 1);
-    transform: rotateY(180deg);
+ 
     border-radius: 10%;
 }
 
@@ -202,7 +200,7 @@ figure{
 
 #frontSeis{
     background-color: rgba(94, 77, 133, 1);
-    transform: rotateY(180deg);
+    
     border-radius: 10%;
 }
 
