@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caça Palavras</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/cacapalavras.css">
+</head>
+<body>
+    
+    <h2>Escolha a dificuldade</h2> 
+    <img src="/imgcacapalavras/img/favicon-32x32.png">
+
+<div class="dificuldade">
+    <a href="#">Fácil</a>
+    <a href="#">Médio</a>
+    <a href="#">Difícil</a>
+    <a href="#">Super Difícil</a>
+</div>
+
+<div class="user">
+    <label for="user">Usuário</label>
+    <input type="text" id="user" name="user">
+    <label for="pts">Pontuação</label>
+    <input type="text" id="pts" name="pts">
+</div>
+
+<div id="regras">
+    <h3 class="regrash3">Regras</h3>
+    <div id="box-regras">
+        <div class="facil">
+            <p class="regrastext">Três palavras estão escondidas neste emaranhado de letras, as palavras estão dispostas em direções diferentes de acordo com a dificuldade. Será que você consegue encontrar? Clique e pinte os quadradinhos.</p>
+            <p>Fácil: Palavras na horizontal</p>
+        </div>
+        <div class="medio escondido">
+            <p class="regrastext">Três palavras estão escondidas neste emaranhado de letras, as palavras estão dispostas em direções diferentes de acordo com a dificuldade. Será que você consegue encontrar? Clique e pinte os quadradinhos.</p>
+            <p>Médio: Palavras na vertical </p>
+        </div>
+        <div class="dificil escondido">
+            <p class="regrastext">Três palavras estão escondidas neste emaranhado de letras, as palavras estão dispostas em direções diferentes de acordo com a dificuldade. Será que você consegue encontrar? Clique e pinte os quadradinhos. </p>
+            <p>Difícil: Uma palavra na horizontal, uma na vertical e outra na diagonal</p>
+        </div>
+        <div class="superdificil escondido">
+            <p class="regrastext">Três palavras estão escondidas neste emaranhado de letras, as palavras estão dispostas em direções diferentes de acordo com a dificuldade. Será que você consegue encontrar? Clique e pinte os quadradinhos. </p>
+            <p>Super difícil: Uma palavra na horizontal, uma na vertical e outra na diagonal (todas de trás para frente)</p>
+        </div>
+    </div>
+</div>
+
+<div id="cacapalavras">
+    
+</div>
+
+    <script src="../js/pontuacao.js"></script>
+
+</body>
+</html>

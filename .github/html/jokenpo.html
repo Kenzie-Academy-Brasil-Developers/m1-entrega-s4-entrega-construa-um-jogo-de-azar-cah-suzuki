@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/jokenpo.css">
+    <title>Jogos de Azar</title>
+</head>
+<body>
+    <header>
+        <figure>
+            <img src="../img/logo.png" alt="Logo galaxy">
+            <figcaption>Logo galaxy</figcaption>
+        </figure>
+        <h1>Pedra Papel Tesoura</h1>
+    </header>
+    <main>
+        <div class="regras">
+            <h3>Regras</h3>
+            <p>
+                "Pedra vence de papel e perde para papel
+                Papel vence de pedra e perde para tesoura
+                Tesoura vence de papel e perde para pedra"
+            </p>
+            <p>
+                Levando isso em consideração faça sua escolha e clique no card para tentar a sorte!!
+            </p>
+
+        </div>
+    <div class="container-acima">
+  
+        <div class="jogador">
+            <span>Jogador: </span>
+            <span>Pc</span>
+
+        </div>
+        <div class="pc-info">
+            <div class="flip" id="cardUm">
+                <div class="card face" id="frontUm">
+                    <figure>
+                        <img src="../img/pc.png" alt="Ilustração pc">
+                        <figcaption>Ilustração pc</figcaption>
+                    </figure>
+                </div>
+                <div class="card face" id="backUm">
+                    <figure>
+                        <img src="../img/pedra.png" alt="Ilustração pedra">
+                        <figcaption>Ilustração pedra</figcaption>
+                    </figure>
+                </div>
+              
+            </div>
+
+            <div class="flip" id="cardDois" >
+                <div class ="card face" id="frontDois">
+                    <figure>
+                        <img src="../img/pc.png" alt="Ilustração pc">
+                        <figcaption>Ilustração pc</figcaption>
+                    </figure>
+                </div>
+                <div class="card face" id="backDois">
+                    <figure>
+                        <img src="../img/papel.png" alt="Ilustração papel">
+                        <figcaption>Ilustração papel</figcaption>
+                    </figure>
+
+                </div>
+            </div>
+
+            <div class="flip" id="cardTres">
+                <div  class="card face" id="frontTres">
+                    <figure>
+                        <img src="../img/pc.png" alt="Ilustração pc">
+                        <figcaption>Ilustração pc</figcaption>
+                    </figure>
+                </div>
+                <div class="face" id="backTres">
+                    <figure>
+                        <img src="../img/tesoura.png" alt="Ilustração tesoura">
+                        <figcaption>Ilustração tesoura</figcaption>
+                    </figure>
+
+                </div>
+            </div>
+        </div>
+      
+<!-- Acrescentar essa label ao index html
+            <label>Jogador: </label>
+            <input type="text" name="name" id="nameUser" placeholder="Digite seu nome ou apelido" onchange="handleChange()"> -->
+   
+<!-- 
+        <a href="page.html" id="link1">Link</a> -->
+
+    </div>
+    <div class="container-abaixo">
+        <div class="jogador">
+            <span>Jogador: </span>
+            <span>Camila</span>
+
+        </div>
+        <div class="card player-pedra">
+            <div class="flip" id="cardQuatro">
+                <div class="card face" id="frontQuatro">
+                    <figure>
+                        <img src="../img/pedra.png" alt="Ilustração pc">
+                        <figcaption>Ilustração pc</figcaption>
+                    </figure>
+                </div>
+                <div class="card face" id="backQuatro">
+                    <figure>
+                        <img src="../img/player.png" alt="Ilustração pedra">
+                        <figcaption>Ilustração pedra</figcaption>
+                    </figure>
+                </div>
+              
+            </div>
+
+            <div class="flip" id="cardCinco" >
+                <div class ="card face" id="frontCinco">
+                    <figure>
+                        <img src="../img/papel.png" alt="Ilustração pc">
+                        <figcaption>Ilustração pc</figcaption>
+                    </figure>
+                </div>
+                <div class="card face" id="backCinco">
+                    <figure>
+                        <img src="../img/player.png" alt="Ilustração papel">
+                        <figcaption>Ilustração papel</figcaption>
+                    </figure>
+
+                </div>
+            </div>
+
+            <div class="flip" id="cardSeis">
+                <div  class="card face" id="frontSeis">
+                    <figure>
+                        <img src="../img/tesoura.png" alt="Ilustração pc">
+                        <figcaption>Ilustração pc</figcaption>
+                    </figure>
+                </div>
+                <div class="face" id="backSeis">
+                    <figure>
+                        <img src="../img/player.png" alt="Ilustração tesoura">
+                        <figcaption>Ilustração tesoura</figcaption>
+                    </figure>
+
+                </div>
+
+        </div>
+    </div>
+</main>
+
+   <script>
+    const card =document.querySelector("#cardUm")
+    const cardDois = document.querySelector("#cardDois")
+    const cardTres = document.querySelector("#cardTres")
+    const cardQuatro =document.querySelector("#cardQuatro")
+    const cardCinco = document.querySelector("#cardCinco")
+    const cardSeis = document.querySelector("#cardSeis")
+
+    const arrayCardsPc = ["cardUm","cardDois","cardTres"]
+    
+     //  cardDois
+
+    // let idDoCard=card.id
+    // console.log(idDoCard)
+    function cardRandomico(arrayCardsPc){
+        let cardRandomico = arrayCardsPc[Math.floor(Math.random() * (3 - 0)) + 0];
+        console.log(cardRandomico)
+        return cardRandomico
+    }
+
+  
+  
+
+      cardQuatro.addEventListener("click",(e)=>{
+      if (cardRandomico(arrayCardsPc).valueOf() === cardUm.id){
+          if (cardUm.classList.contains("flip")){
+            cardUm.classList.toggle("flip")
+          }
+           
+           if (!cardDois.classList.contains("flip")){
+               cardDois.classList.toggle("flip")
+           }
+           if (!cardTres.classList.contains("flip")){
+               cardTres.classList.toggle("flip")
+           }
+      }else if (cardRandomico(arrayCardsPc).valueOf() === cardDois.id){
+          if (cardDois.classList.contains("flip")){
+            cardDois.classList.toggle("flip")
+          }
+        if (!cardTres.classList.contains("flip")){
+               cardTres.classList.toggle("flip")
+           }
+           if (!cardUm.classList.contains("flip")){
+               cardUm.classList.toggle("flip")
+           }
+
+      } else {
+          if (cardTres.classList.contains("flip")){
+            cardTres.classList.toggle("flip")
+          }
+        
+           if (!cardDois.classList.contains("flip")){
+               cardDois.classList.toggle("flip")
+           }
+           if (!cardUm.classList.contains("flip")){
+               cardUm.classList.toggle("flip")
+           }
+
+      }
+    
+                
+        if (!cardQuatro.classList.contains("flip")) {
+            cardQuatro.classList.toggle("flip")
+        }
+        if (cardCinco.classList.contains("flip")){
+            cardCinco.classList.toggle("flip")
+        }
+        if (cardSeis.classList.contains("flip")){
+            cardSeis.classList.toggle("flip")
+        }
+    })
+
+    cardCinco.addEventListener("click",(e)=>{
+        if (cardRandomico(arrayCardsPc).valueOf() === cardUm.id){
+          if (cardUm.classList.contains("flip")){
+            cardUm.classList.toggle("flip")
+          }
+           
+           if (!cardDois.classList.contains("flip")){
+               cardDois.classList.toggle("flip")
+           }
+           if (!cardTres.classList.contains("flip")){
+               cardTres.classList.toggle("flip")
+           }
+      }else if (cardRandomico(arrayCardsPc).valueOf() === cardDois.id){
+          if (cardDois.classList.contains("flip")){
+            cardDois.classList.toggle("flip")
+          }
+        if (!cardTres.classList.contains("flip")){
+               cardTres.classList.toggle("flip")
+           }
+           if (!cardUm.classList.contains("flip")){
+               cardUm.classList.toggle("flip")
+           }
+
+      } else {
+          if (cardTres.classList.contains("flip")){
+            cardTres.classList.toggle("flip")
+          }
+        
+           if (!cardDois.classList.contains("flip")){
+               cardDois.classList.toggle("flip")
+           }
+           if (!cardUm.classList.contains("flip")){
+               cardUm.classList.toggle("flip")
+           }
+
+      }
+
+
+
+        if (!cardCinco.classList.contains("flip")) {
+            cardCinco.classList.toggle("flip")
+        }
+        if (cardQuatro.classList.contains("flip")){
+            cardQuatro.classList.toggle("flip")
+        }
+        if (cardSeis.classList.contains("flip")){
+            cardSeis.classList.toggle("flip")
+        }
+     
+  
+     
+    })
+
+    cardSeis.addEventListener("click",(e)=>{
+        if (cardRandomico(arrayCardsPc).valueOf() === cardUm.id){
+          if (cardUm.classList.contains("flip")){
+            cardUm.classList.toggle("flip")
+          }
+           
+           if (!cardDois.classList.contains("flip")){
+               cardDois.classList.toggle("flip")
+           }
+           if (!cardTres.classList.contains("flip")){
+               cardTres.classList.toggle("flip")
+           }
+      }else if (cardRandomico(arrayCardsPc).valueOf() === cardDois.id){
+          if (cardDois.classList.contains("flip")){
+            cardDois.classList.toggle("flip")
+          }
+        if (!cardTres.classList.contains("flip")){
+               cardTres.classList.toggle("flip")
+           }
+           if (!cardUm.classList.contains("flip")){
+               cardUm.classList.toggle("flip")
+           }
+
+      } else {
+          if (cardTres.classList.contains("flip")){
+            cardTres.classList.toggle("flip")
+          }
+        
+           if (!cardDois.classList.contains("flip")){
+               cardDois.classList.toggle("flip")
+           }
+           if (!cardUm.classList.contains("flip")){
+               cardUm.classList.toggle("flip")
+           }
+
+      }
+     
+      
+        if (!cardSeis.classList.contains("flip")) {
+            cardSeis.classList.toggle("flip")
+        }
+        if (cardQuatro.classList.contains("flip")){
+            cardQuatro.classList.toggle("flip")
+        }
+        if (cardCinco.classList.contains("flip")){
+            cardCinco.classList.toggle("flip")
+        }
+    })
+</script>
+
+<footer>
+
+</footer>
+  <script src="../js/jokenpo.js"></script>
+</body>
+</html>
