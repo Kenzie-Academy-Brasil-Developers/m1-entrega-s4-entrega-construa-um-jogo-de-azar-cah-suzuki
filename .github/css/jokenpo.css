@@ -28,10 +28,16 @@ figure{
   display: none;
 }
 
+.container-dos-containers-dos-cards{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .container-abaixo{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-right: 60px;
 }
 
 
@@ -188,10 +194,16 @@ figure{
     align-items: center;
     text-align: center;
     margin-bottom: 50px;
+    margin-right: 150px;
 }
 
 .regras{
-    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 50px;
+    margin-right: 50px;
+    max-width: 300px;
 }
 
 header{
@@ -211,101 +223,7 @@ header h1{
     margin-bottom: 20px;
 }
 
-/* @media screen and (min-width:800px){
- header{
-     justify-content: flex-start;
- }
-
- figure{
-     margin-right: 200px;
- }
-    
-} */
-/* 
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: rgba(0,0,0,0.8);
-    z-index: 99999;
-    opacity:0;
-    -webkit-transition: opacity 400ms ease-in;
-    -moz-transition: opacity 400ms ease-in;
-    transition: opacity 400ms ease-in;
-    pointer-events: none;
-  }
-
-  .modal:target {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .modal > div {
-    width: 400px;
-    position: relative;
-    margin: 10% auto;
-    padding: 15px 20px;
-    background: #fff;
-  }
-
-  .close {
-    position: absolute;
-    width: 30px;
-    right: -15px;
-    top: -20px;
-    text-align: center;
-    line-height: 30px;
-    margin-top: 5px;
-    background: #ff4545;
-    border-radius: 50%;
-    font-size: 16px;
-    color: #8d0000;
-  } */
-
-
-/* .inputModal {
-    display: none; Hidden by default
-    position: fixed; Stay in place
-    z-index: 1; Sit on top 
-    left: 0;
-    top: 0; 
-    width: 100%; Full width
-    height: 100%; Full height
-     overflow: auto; Enable scroll if needed
-     background-color: rgb(0,0,0); Fallback color
-    background-color: rgba(0,0,0,0.4); Black w/ opacity
-  } */
-   
-  /* Modal Content/Box */
-  /* .modal{ 
-      display: none;
-     background-color: #fefefe; 
-     margin: 15% auto; 15% from the top and centered 
-     padding: 20px; 
-     border: 1px solid #888; 
-     width: 80%; Could be more or less, depending on screen size
-  }  */
-  
-  /* The Close Button */
-  /* .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }   */
-
-  .modal-bg{
+.modal-bg{
       position: fixed;
        z-index: 99999; 
        width: 100%; 
@@ -319,14 +237,14 @@ header h1{
       opacity: 0;
       visibility: hidden;
       transition: visibility 0s, opacity 0,5s;
-  }
+}
 
-  .bg-active{
+.bg-active{
       visibility: visible;
       opacity: 1;
-  }
+}
 
-  .modal{
+.modal{
       position: relative;
       background-color: white;
       width: 30%;
@@ -337,13 +255,25 @@ header h1{
       flex-direction: column;
       margin-left: 100px;
       border-radius: 3%;
+      margin-top:50px;
 
-  }
+}
 
-  .modal button{
+.modal button{
       padding: 10px 30px;
       background-color: blueviolet;
       color: white;
       border: none;
       cursor: pointer;
-  }
+}
+
+/* @media screen and (min-width:800px){
+ header{
+     justify-content: flex-start;
+ }
+
+ figure{
+     margin-right: 200px;
+ }
+    
+} */

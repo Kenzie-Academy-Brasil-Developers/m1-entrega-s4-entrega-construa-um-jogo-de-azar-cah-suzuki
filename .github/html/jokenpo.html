@@ -51,6 +51,7 @@
                 <button class="modal-btn">Modal</button>
             </div>
         </div>
+        <div class=container-dos-containers-dos-cards>
 
     <div class="container-acima">
   
@@ -173,6 +174,7 @@
 
         </div>
     </div>
+</div>
 </main>
 
    <script>
@@ -182,45 +184,22 @@
     const cardQuatro =document.querySelector("#cardQuatro")
     const cardCinco = document.querySelector("#cardCinco")
     const cardSeis = document.querySelector("#cardSeis")
-    // const inputModal = document.getElementById("mensagemModal")
-    // const inputModalContent = document.getElementById("modal-content")
-    // const closeSpan = document.getElementsByClassName("close")[0]
-    // const pMessage = document.getElementsByClassName("p-message")
     const modalBtn = document.querySelector(".modal-btn")
     const modalBg = document.querySelector(".modal-bg")
     
     const arrayCardsPc = ["cardUm","cardDois","cardTres"]
 
+
   
-    // function showModal(inputModal,inputModalContent,closeSpan,pMessage,message){
-    //     let p = document.createElement("p")
-    //     let texto = document.createTextNode(message);
-    //     console.log(message)
-
-    //     inputModal.style.display = "block"
-    //     function incia(){
-    //         pMessage.textContent=message
-    //     }
-        
-
-    //     closeSpan.onclick = function() {
-    //       inputModal.style.display = "none";
-    //     }
-
-    //     window.onclick = function(event) {
-    //       if (event.target == inputModal) {
-    //       inputModal.style.display = "none";
-    //       }
-    //     }
-    // }
-
-    function showModal(message){
+    function showModal(message,currentEscolha){
         modalBg.classList.add("bg-active")
         let p = document.createElement("p")
         p.innerHTML=message
         document.querySelector("#modal-result").appendChild(p)
         modalBtn.addEventListener("click",function(){
             modalBg.classList.remove("bg-active")
+            reset(message,currentEscolha)
+            p.innerHTML=""
         })
     }
   
@@ -275,7 +254,15 @@
       }
 
 
-    function reset(){
+    function reset(message,currentEscolha){
+        if(currentEscolha === "cardQuatro" ){
+            cardQuatro.classList.remove("flip")
+        }else if (currentEscolha === "cardCinco"){
+            cardCinco.classList.remove("flip")
+        }else if (currentEscolha === "cardSeis" ){ 
+            cardSeis.classList.remove("flip")
+        }
+
      if (!cardUm.classList.contains("flip")){
                cardUm.classList.toggle("flip")
         }else if (!cardDois.classList.contains("flip")){
@@ -289,6 +276,7 @@
         }else {
                cardSeis.classList.toggle("flip")
         }
+    message = ""
 }
   
   
@@ -355,7 +343,7 @@
         currentPc = currentPcToString(currentPc)
         currentEscolha = currentEscolhaToString(currentEscolha)
        
-         showModal(winOrLose(currentEscolha,currentPc))
+         showModal(winOrLose(currentEscolha,currentPc),currentEscolha)
 
         
       
@@ -424,7 +412,7 @@
         currentPc = currentPcToString(currentPc)
         currentEscolha = currentEscolhaToString(currentEscolha)
      
-        showModal(winOrLose(currentEscolha,currentPc))
+        showModal(winOrLose(currentEscolha,currentPc),currentEscolha)
      
     })
 
@@ -489,7 +477,7 @@
         currentPc = currentPcToString(currentPc)
         currentEscolha = currentEscolhaToString(currentEscolha)
 
-        showModal(winOrLose(currentEscolha,currentPc))
+        showModal(winOrLose(currentEscolha,currentPc),currentEscolha)
     })
 </script>
 
