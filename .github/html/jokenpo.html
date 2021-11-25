@@ -8,6 +8,21 @@
     <title>Jogos de Azar</title>
 </head>
 <body>
+  
+
+ 
+
+    <!-- The Modal -->
+<!-- <div id="mensagemModal" class="modal"> -->
+
+  <!-- Modal content -->
+    <!-- <div class="modal-content">
+     <span class="close">&times;</span>
+     <p class="p-message">Some text</p>
+    </div>
+</div> -->
+
+
     <header>
         <figure>
             <img src="../img/logo.png" alt="Logo galaxy">
@@ -28,6 +43,16 @@
             </p>
 
         </div>
+
+        <div class="modal-bg">
+            <div class="modal" >
+                <div id="modal-result"></div>
+                
+                <button class="modal-btn">Modal</button>
+            </div>
+        </div>
+        <div class=container-dos-containers-dos-cards>
+
     <div class="container-acima">
   
         <div class="jogador">
@@ -149,6 +174,7 @@
 
         </div>
     </div>
+</div>
 </main>
 
    <script>
@@ -158,29 +184,85 @@
     const cardQuatro =document.querySelector("#cardQuatro")
     const cardCinco = document.querySelector("#cardCinco")
     const cardSeis = document.querySelector("#cardSeis")
-
-    const arrayCardsPc = ["cardUm","cardDois","cardTres"]
-    const arrayOpcoesjoKenPo = [["cardUm","Pedra"],["cardDois","Papel"],["cardTres","Tesoura"]]
-
-    const objOpcoesJoKenPo = {
-        cardUm: "Pedra",
-        cardDois: "Papel",
-        cardTres:"Tesoura"
-    }
-
-
+    const modalBtn = document.querySelector(".modal-btn")
+    const modalBg = document.querySelector(".modal-bg")
     
-     //  cardDois
+    const arrayCardsPc = ["cardUm","cardDois","cardTres"]
 
-    // let idDoCard=card.id
-    // console.log(idDoCard)
+
+  
+    function showModal(message,currentEscolha){
+        modalBg.classList.add("bg-active")
+        let p = document.createElement("p")
+        p.innerHTML=message
+        document.querySelector("#modal-result").appendChild(p)
+        modalBtn.addEventListener("click",function(){
+            modalBg.classList.remove("bg-active")
+            reset(message,currentEscolha)
+            p.innerHTML=""
+        })
+    }
+  
+
     function cardRandomico(arrayCardsPc){
         let cardRandomico = arrayCardsPc[Math.floor(Math.random() * (3 - 0)) + 0];
-        console.log(cardRandomico)
         return cardRandomico
     }
 
-    function resetCards(){
+    function currentPcToString(currentPc){
+        if(currentPc === "cardUm"){
+            currentPc = "pedra"
+        } else if (currentPc === "cardDois"){
+            currentPc = "papel"
+        } else {
+            currentPc = "tesoura"
+        }
+
+        return currentPc
+    }
+
+    function currentEscolhaToString(currentEscolha){
+               if (currentEscolha === "cardQuatro"){
+                   currentEscolha = "pedra"
+               } else if (currentEscolha === "cardCinco"){
+                   currentEscolha = "papel"
+               } else if (currentEscolha === "cardSeis"){
+                   currentEscolha = "tesoura"
+               } 
+
+               return currentEscolha
+    }
+
+    function winOrLose(currentEscolha,currentPc){
+          let message = ""
+        if (currentEscolha === currentPc){
+           message ="Empate!!"
+        } else if (currentEscolha === "pedra" && currentPc === "papel"){
+            message ="Perdeu!!"
+        } else if (currentEscolha === "pedra" && currentPc === "tesoura"){
+            message ="Ganhou!!"
+        } else if (currentEscolha === "papel" && currentPc === "tesoura"){
+            message ="Perdeu!!"
+        } else if (currentEscolha === "papel" && currentPc === "pedra"){
+            message ="Ganhou!!"
+        } else if (currentEscolha === "tesoura" && currentPc === "pedra"){
+            message ="Perdeu!!"
+        } else if (currentEscolha === "tesoura" && currentPc === "papel"){
+            message ="Ganhou!!"
+        }
+        return message
+      }
+
+
+    function reset(message,currentEscolha){
+        if(currentEscolha === "cardQuatro" ){
+            cardQuatro.classList.remove("flip")
+        }else if (currentEscolha === "cardCinco"){
+            cardCinco.classList.remove("flip")
+        }else if (currentEscolha === "cardSeis" ){ 
+            cardSeis.classList.remove("flip")
+        }
+
      if (!cardUm.classList.contains("flip")){
                cardUm.classList.toggle("flip")
         }else if (!cardDois.classList.contains("flip")){
@@ -194,11 +276,18 @@
         }else {
                cardSeis.classList.toggle("flip")
         }
+    message = ""
 }
   
   
 
-      cardQuatro.addEventListener("click",(e)=>{
+    cardQuatro.addEventListener("click",(e)=>{
+        let currentId = e.currentTarget.id
+        let currentPc = ""
+        let currentEscolha = e.currentTarget.id 
+
+         
+
       if (cardRandomico(arrayCardsPc).valueOf() === cardUm.id){
           if (cardUm.classList.contains("flip")){
             cardUm.classList.toggle("flip")
@@ -210,16 +299,20 @@
            if (!cardTres.classList.contains("flip")){
                cardTres.classList.toggle("flip")
            }
+           currentPc = cardUm.id
+       
       }else if (cardRandomico(arrayCardsPc).valueOf() === cardDois.id){
           if (cardDois.classList.contains("flip")){
             cardDois.classList.toggle("flip")
           }
-        if (!cardTres.classList.contains("flip")){
+          if (!cardTres.classList.contains("flip")){
                cardTres.classList.toggle("flip")
            }
            if (!cardUm.classList.contains("flip")){
                cardUm.classList.toggle("flip")
            }
+           currentPc = cardDois.id
+      
 
       } else {
           if (cardTres.classList.contains("flip")){
@@ -232,11 +325,10 @@
            if (!cardUm.classList.contains("flip")){
                cardUm.classList.toggle("flip")
            }
-
+           currentPc = cardTres.id
       
 
       }
-    
                 
         if (!cardQuatro.classList.contains("flip")) {
             cardQuatro.classList.toggle("flip")
@@ -247,9 +339,25 @@
         if (cardSeis.classList.contains("flip")){
             cardSeis.classList.toggle("flip")
         }
+    
+        currentPc = currentPcToString(currentPc)
+        currentEscolha = currentEscolhaToString(currentEscolha)
+       
+         showModal(winOrLose(currentEscolha,currentPc),currentEscolha)
+
+        
+      
+ 
     })
 
+  
+
     cardCinco.addEventListener("click",(e)=>{
+        let currentId = e.currentTarget.id
+        let currentPc = ""
+        let currentEscolha = e.currentTarget.id 
+
+
         if (cardRandomico(arrayCardsPc).valueOf() === cardUm.id){
           if (cardUm.classList.contains("flip")){
             cardUm.classList.toggle("flip")
@@ -261,6 +369,7 @@
            if (!cardTres.classList.contains("flip")){
                cardTres.classList.toggle("flip")
            }
+           currentPc = cardUm.id
       }else if (cardRandomico(arrayCardsPc).valueOf() === cardDois.id){
           if (cardDois.classList.contains("flip")){
             cardDois.classList.toggle("flip")
@@ -271,6 +380,7 @@
            if (!cardUm.classList.contains("flip")){
                cardUm.classList.toggle("flip")
            }
+           currentPc = cardDois.id
 
       } else {
           if (cardTres.classList.contains("flip")){
@@ -283,6 +393,7 @@
            if (!cardUm.classList.contains("flip")){
                cardUm.classList.toggle("flip")
            }
+           currentPc = cardTres.id
 
       }
 
@@ -297,12 +408,21 @@
         if (cardSeis.classList.contains("flip")){
             cardSeis.classList.toggle("flip")
         }
+
+        currentPc = currentPcToString(currentPc)
+        currentEscolha = currentEscolhaToString(currentEscolha)
      
-  
+        showModal(winOrLose(currentEscolha,currentPc),currentEscolha)
      
     })
 
     cardSeis.addEventListener("click",(e)=>{
+        let currentId = e.currentTarget.id
+        let currentPc = ""
+        let currentEscolha = e.currentTarget.id 
+       
+
+
         if (cardRandomico(arrayCardsPc).valueOf() === cardUm.id){
           if (cardUm.classList.contains("flip")){
             cardUm.classList.toggle("flip")
@@ -314,6 +434,7 @@
            if (!cardTres.classList.contains("flip")){
                cardTres.classList.toggle("flip")
            }
+           currentPc = cardUm.id
       }else if (cardRandomico(arrayCardsPc).valueOf() === cardDois.id){
           if (cardDois.classList.contains("flip")){
             cardDois.classList.toggle("flip")
@@ -324,6 +445,7 @@
            if (!cardUm.classList.contains("flip")){
                cardUm.classList.toggle("flip")
            }
+           currentPc = cardDois.id
 
       } else {
           if (cardTres.classList.contains("flip")){
@@ -336,6 +458,7 @@
            if (!cardUm.classList.contains("flip")){
                cardUm.classList.toggle("flip")
            }
+           currentPc = cardTres.id
 
       }
      
@@ -349,9 +472,13 @@
         if (cardCinco.classList.contains("flip")){
             cardCinco.classList.toggle("flip")
         }
-    })
+        console.log(currentEscolha)
 
-  
+        currentPc = currentPcToString(currentPc)
+        currentEscolha = currentEscolhaToString(currentEscolha)
+
+        showModal(winOrLose(currentEscolha,currentPc),currentEscolha)
+    })
 </script>
 
 <footer>
