@@ -4,9 +4,23 @@ let ptn = document.querySelector('#pts')
 let btn = document.querySelector('.rstBtn')
 let wBtn = document.querySelector('.winBtn')
 let wScrn = document.querySelector('#vitoria')
+let usrName = document.querySelector('#user')
+
+//pegar o nome de usuário da pagina inicial
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+let userName = urlParams.get("name")
+console.log(userName)
+if(userName === null){
+    usrName.value = 'Jogador'
+}else{
+    usrName.value = userName
+}
+
+
 
 // array de possiveis palavras 
-let palavrasRaiz = ['bigbang', 'cosmos','universo','estrela','explosão','andromeda']
+let palavrasRaiz = ['bigbang', 'cosmos','universo','estrela','explosao','andromeda']
 
 //variaveis
 let numeroDePalavras = 0
@@ -14,6 +28,7 @@ let palavrasSelecionadas = []
 let resposta = ''
 let score = []
 let pontuacao = 0
+pts.value = 0
 let dificul = ''
 
 //event listeners
