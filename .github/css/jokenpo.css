@@ -291,15 +291,25 @@ figure{
       border: 15px solid rgba(94, 77, 133, .3);
 }
 
+.header-do-modal{
+    display: flex;
+    align-items: center;
+}
+
+.header-do-modal figure{
+    width: 80px;
+    margin-right: 10px;
+}
+
 .modal p{
     margin: 0;
 }
 
 .modal button{
-      padding: 10px 30px;
+      padding: 10px;
       border-radius: 5%;
       width: 200px;
-      height: 100px;
+      height: 80px;
       background-color: rgba(94, 77, 133, 1);
       color: white;
       text-shadow: 0.1em 0.1em 0.2em black;
@@ -307,6 +317,8 @@ figure{
       cursor: pointer;
       font-family: 'Genos', sans-serif;
       font-size: 22px;
+      margin-top: 5px;
+      margin-bottom: 5px;
 }
 
 @media screen and (min-width:800px){
