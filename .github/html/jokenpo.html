@@ -172,18 +172,42 @@
     }
 
   
+  
 
       cardQuatro.addEventListener("click",(e)=>{
       if (cardRandomico(arrayCardsPc).valueOf() === cardUm.id){
-           console.log(cardRandomico)
-           cardUm.classList.toggle("flip")
+          if (cardUm.classList.contains("flip")){
+            cardUm.classList.toggle("flip")
+          }
+           
+           if (!cardDois.classList.contains("flip")){
+               cardDois.classList.toggle("flip")
+           }
+           if (!cardTres.classList.contains("flip")){
+               cardTres.classList.toggle("flip")
+           }
       }else if (cardRandomico(arrayCardsPc).valueOf() === cardDois.id){
-        console.log(cardRandomico)
-        cardDois.classList.toggle("flip")
+          if (cardDois.classList.contains("flip")){
+            cardDois.classList.toggle("flip")
+          }
+        if (!cardTres.classList.contains("flip")){
+               cardTres.classList.toggle("flip")
+           }
+           if (!cardUm.classList.contains("flip")){
+               cardUm.classList.toggle("flip")
+           }
 
       } else {
-        console.log(cardRandomico)
-        cardTres.classList.toggle("flip")
+          if (cardTres.classList.contains("flip")){
+            cardTres.classList.toggle("flip")
+          }
+        
+           if (!cardDois.classList.contains("flip")){
+               cardDois.classList.toggle("flip")
+           }
+           if (!cardUm.classList.contains("flip")){
+               cardUm.classList.toggle("flip")
+           }
 
       }
     
@@ -200,6 +224,44 @@
     })
 
     cardCinco.addEventListener("click",(e)=>{
+        if (cardRandomico(arrayCardsPc).valueOf() === cardUm.id){
+          if (cardUm.classList.contains("flip")){
+            cardUm.classList.toggle("flip")
+          }
+           
+           if (!cardDois.classList.contains("flip")){
+               cardDois.classList.toggle("flip")
+           }
+           if (!cardTres.classList.contains("flip")){
+               cardTres.classList.toggle("flip")
+           }
+      }else if (cardRandomico(arrayCardsPc).valueOf() === cardDois.id){
+          if (cardDois.classList.contains("flip")){
+            cardDois.classList.toggle("flip")
+          }
+        if (!cardTres.classList.contains("flip")){
+               cardTres.classList.toggle("flip")
+           }
+           if (!cardUm.classList.contains("flip")){
+               cardUm.classList.toggle("flip")
+           }
+
+      } else {
+          if (cardTres.classList.contains("flip")){
+            cardTres.classList.toggle("flip")
+          }
+        
+           if (!cardDois.classList.contains("flip")){
+               cardDois.classList.toggle("flip")
+           }
+           if (!cardUm.classList.contains("flip")){
+               cardUm.classList.toggle("flip")
+           }
+
+      }
+
+
+
         if (!cardCinco.classList.contains("flip")) {
             cardCinco.classList.toggle("flip")
         }
@@ -215,8 +277,42 @@
     })
 
     cardSeis.addEventListener("click",(e)=>{
-        let local=e.currentTarget
-        console.log(local)
+        if (cardRandomico(arrayCardsPc).valueOf() === cardUm.id){
+          if (cardUm.classList.contains("flip")){
+            cardUm.classList.toggle("flip")
+          }
+           
+           if (!cardDois.classList.contains("flip")){
+               cardDois.classList.toggle("flip")
+           }
+           if (!cardTres.classList.contains("flip")){
+               cardTres.classList.toggle("flip")
+           }
+      }else if (cardRandomico(arrayCardsPc).valueOf() === cardDois.id){
+          if (cardDois.classList.contains("flip")){
+            cardDois.classList.toggle("flip")
+          }
+        if (!cardTres.classList.contains("flip")){
+               cardTres.classList.toggle("flip")
+           }
+           if (!cardUm.classList.contains("flip")){
+               cardUm.classList.toggle("flip")
+           }
+
+      } else {
+          if (cardTres.classList.contains("flip")){
+            cardTres.classList.toggle("flip")
+          }
+        
+           if (!cardDois.classList.contains("flip")){
+               cardDois.classList.toggle("flip")
+           }
+           if (!cardUm.classList.contains("flip")){
+               cardUm.classList.toggle("flip")
+           }
+
+      }
+     
       
         if (!cardSeis.classList.contains("flip")) {
             cardSeis.classList.toggle("flip")
