@@ -11,6 +11,7 @@ const cardCinco = document.querySelector("#cardCinco")
 const cardSeis = document.querySelector("#cardSeis")
 const modalBtn = document.querySelector(".modal-btn")
 const modalBg = document.querySelector(".modal-bg")
+const resultP = document.querySelector(".resultP")
 
 const arrayCardsPc = ["cardUm","cardDois","cardTres"]
 
@@ -18,16 +19,19 @@ let userName = urlParams.get("name")
 outputNomeJogador.innerHTML=userName
 outputNomeJogadorModal.innerHTML=userName
 
+modalBtn.addEventListener("click",function(){
+    console.log("clicked on modal");
+    modalBg.classList.remove("bg-active")
+    reset();
+    resultP.innerHTML="";
+})
+
 function showModal(message){
     modalBg.classList.add("bg-active")
-    let p = document.createElement("p")
-    p.innerHTML=message
-    document.querySelector("#modal-result").appendChild(p)
-    modalBtn.addEventListener("click",function(){
-        modalBg.classList.remove("bg-active")
-        reset()
-        p.innerHTML=""
-    })
+    //let p = document.createElement("p")
+    resultP.innerHTML=message;  
+  
+
 }
 
 function cardRandomico(arrayCardsPc){
@@ -83,20 +87,21 @@ function winOrLose(currentEscolha,currentPc){
 function reset(){
     if (!cardUm.classList.contains("flip")){
           cardUm.classList.toggle("flip")
-    }else if(!cardDois.classList.contains("flip")){
+    }if(!cardDois.classList.contains("flip")){
         cardDois.classList.toggle("flip")
-    }else if(!cardTres.classList.contains("flip")){
+    }if(!cardTres.classList.contains("flip")){
         cardTres.classList.toggle("flip")
-    }else if(!cardQuatro.classList.contains("flip")){
+    }if(!cardQuatro.classList.contains("flip")){
         cardQuatro.classList.toggle("flip")
-    }else if(!cardCinco.classList.contains("flip")){
+    }if(!cardCinco.classList.contains("flip")){
         cardCinco.classList.toggle("flip")
-    }else if(!cardSeis.classList.contains("flip")){
+    }if(!cardSeis.classList.contains("flip")){
         cardSeis.classList.toggle("flip")
     }
 }
 
 cardQuatro.addEventListener("click",(e)=>{
+    console.log("clicked card 4");
     let currentId = e.currentTarget.id
     let currentPc = ""
     let currentEscolha = e.currentTarget.id 
