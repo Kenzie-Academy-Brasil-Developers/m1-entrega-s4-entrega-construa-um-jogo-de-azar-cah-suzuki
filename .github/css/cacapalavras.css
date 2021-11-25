@@ -50,6 +50,8 @@ a {
     margin-left: 22px;
     margin-top: 5px;
 
+    width: 80%;
+
 }
 
 a:hover {
@@ -118,11 +120,11 @@ input {
 
 div.dificuldade {
     display: flex;
-    flex-direction: row;
-    background-color: #008000c4;
-    padding: 10px;
-    margin-right: 50px;
-    border:black 5px solid;
+    flex-direction: column;
+    width: 10%;
+    margin-left: 50px;
+
+ 
 }
 
 p {
