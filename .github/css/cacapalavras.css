@@ -46,6 +46,7 @@ a {
     text-decoration: none;
     margin-left: 22px;
     margin-top: 5px;
+    width: 80%;
 }
 
 a:hover {
@@ -146,6 +147,7 @@ input {
 div.dificuldade {
     display: flex;
     flex-direction: column;
+    width: 10%;
     margin-left: 50px;
 }
 
