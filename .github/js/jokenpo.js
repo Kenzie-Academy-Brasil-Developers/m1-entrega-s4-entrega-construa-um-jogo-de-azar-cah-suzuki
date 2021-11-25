@@ -5,6 +5,10 @@ const urlParams = new URLSearchParams(queryString);
 let userName = urlParams.get("name")
 console.log(userName)
 
+const outputNomeJogador = document.getElementById("nome-jogador")
+outputNomeJogador.innerHTML=userName
+
+
 
 
 // function numeroAleatorio(min,max){
