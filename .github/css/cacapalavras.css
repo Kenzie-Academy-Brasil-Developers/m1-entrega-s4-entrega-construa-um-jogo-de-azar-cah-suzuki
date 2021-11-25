@@ -323,20 +323,20 @@ a:hover {
 
 #palavras-sugeridas  {
     display: flex;
+    align-self: center;
     width: 300px;
     padding-bottom: 100px;
-    margin-left: 150px;
+    margin-left: -670px;
     margin-top: 80px;
     margin-bottom: -150px;
-    background-color: #2b1d5a93;
+    background-color: #a296cacb;
     border-radius: 10px;
-    color: white;
 }
 
 .palavrash3 {
     font-size: 21px;
     font-family: 'Genos',serif;
-    color: #b0a8ce;
+    color: #2b1d5a;
     text-shadow: black 0.1em 0.1em 0.2em;
     margin-left: 60px;
 }
@@ -491,7 +491,7 @@ header{
 .winBtn{
     height: 70px;
     width: 150px;
-    margin-left: 42vw;
+    margin-left: 46vw;
     box-shadow: black 0.1em 0.1em 0.2em;
     border: 1px solid transparent;
     border-radius: 15px;
@@ -510,7 +510,7 @@ header{
     font-size: 60px;
     margin-bottom: 100px;
     margin-top: 35vh;
-    margin-left: 20vw;
+    text-align: center;
 }
 
 .hidden{
