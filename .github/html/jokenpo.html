@@ -160,6 +160,15 @@
     const cardSeis = document.querySelector("#cardSeis")
 
     const arrayCardsPc = ["cardUm","cardDois","cardTres"]
+    const arrayOpcoesjoKenPo = [["cardUm","Pedra"],["cardDois","Papel"],["cardTres","Tesoura"]]
+
+    const objOpcoesJoKenPo = {
+        cardUm: "Pedra",
+        cardDois: "Papel",
+        cardTres:"Tesoura"
+    }
+
+
     
      //  cardDois
 
@@ -171,6 +180,21 @@
         return cardRandomico
     }
 
+    function resetCards(){
+     if (!cardUm.classList.contains("flip")){
+               cardUm.classList.toggle("flip")
+        }else if (!cardDois.classList.contains("flip")){
+               cardDois.classList.toggle("flip")
+        }else if (!cardTres.classList.contains("flip")){
+               cardTres.classList.toggle("flip")
+        }else if (!cardQuatro.classList.contains("flip")){
+               cardQuatro.classList.toggle("flip")
+        }else if (!cardCinco.classList.contains("flip")){
+               cardCinco.classList.toggle("flip")
+        }else {
+               cardSeis.classList.toggle("flip")
+        }
+}
   
   
 
@@ -208,6 +232,8 @@
            if (!cardUm.classList.contains("flip")){
                cardUm.classList.toggle("flip")
            }
+
+      
 
       }
     
@@ -324,6 +350,8 @@
             cardCinco.classList.toggle("flip")
         }
     })
+
+  
 </script>
 
 <footer>
