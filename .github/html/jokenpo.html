@@ -180,6 +180,51 @@
         return cardRandomico
     }
 
+    function currentPcToString(currentPc){
+        if(currentPc === "cardUm"){
+            currentPc = "pedra"
+        } else if (currentPc === "cardDois"){
+            currentPc = "papel"
+        } else {
+            currentPc = "tesoura"
+        }
+
+        return currentPc
+    }
+
+    function currentEscolhaToString(currentEscolha){
+               if (currentEscolha === "cardQuatro"){
+                   currentEscolha = "pedra"
+               } else if (currentEscolha === "cardCinco"){
+                   currentEscolha = "papel"
+               } else if (currentEscolha === "cardSeis"){
+                   currentEscolha = "tesoura"
+               } 
+
+               return currentEscolha
+    }
+
+    function winOrLose(currentEscolha,currentPc){
+          let message = ""
+        if (currentEscolha === currentPc){
+           message ="empate!!"
+        } else if (currentEscolha === "pedra" && currentPc === "papel"){
+            message ="perdeu!!"
+        } else if (currentEscolha === "pedra" && currentPc === "tesoura"){
+            message ="ganhou!!"
+        } else if (currentEscolha === "papel" && currentPc === "tesoura"){
+            message ="perdeu!!"
+        } else if (currentEscolha === "papel" && currentPc === "pedra"){
+            message ="ganhou!!"
+        } else if (currentEscolha === "tesoura" && currentPc === "pedra"){
+            message ="perdeu!!"
+        } else if (currentEscolha === "tesoura" && currentPc === "papel"){
+            message ="ganhou!!"
+        }
+        return message
+      }
+
+
     function reset(){
      if (!cardUm.classList.contains("flip")){
                cardUm.classList.toggle("flip")
@@ -201,11 +246,13 @@
       cardQuatro.addEventListener("click",(e)=>{
         let currentId = e.currentTarget.id
         let currentPc = ""
-        let currentEscolha=""
-        currentEscolha = "pedra"
+        let currentEscolha = e.currentTarget.id
        
        
             console.log(currentId);
+            console.log("current escolha "+currentEscolha); 
+
+       
 
          
 
@@ -250,7 +297,6 @@
            console.log(currentPc)
 
       }
-    
                 
         if (!cardQuatro.classList.contains("flip")) {
             cardQuatro.classList.toggle("flip")
@@ -261,25 +307,17 @@
         if (cardSeis.classList.contains("flip")){
             cardSeis.classList.toggle("flip")
         }
-        /////logica win
-        if(currentPc === "cardUm"){
-            currentPc = "pedra"
-        } else if (currentPc === "cardDois"){
-            currentPc = "papel"
-        } else {
-            currentPc = "tesoura"
-        }
+    
+        currentPc = currentPcToString(currentPc)
+        currentEscolha = currentEscolhaToString(currentEscolha)
+        console.log(winOrLose(currentEscolha,currentPc))
 
-        if (currentEscolha === "pedra" && currentPc === "papel"){
-           console.log("perdeu!!")
-        } else if (currentEscolha === "pedra" && currentPc === "pedra"){
-            console.log("empate!!")
-        } else {
-            console.log("ganhou!!")
-        }
-        
+
+ 
  
     })
+
+  
 
     cardCinco.addEventListener("click",(e)=>{
         if (cardRandomico(arrayCardsPc).valueOf() === cardUm.id){
