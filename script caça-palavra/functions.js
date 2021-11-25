@@ -10,7 +10,8 @@ let usrName = document.querySelector('#user')
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 let userName = urlParams.get("name")
-console.log(userName)
+
+//condicional para verificar se o jogador digitou algo como username 
 if(userName === null){
     usrName.value = 'Jogador'
 }else{
@@ -120,6 +121,8 @@ function palavraTabelaFacil(){
     let linha = randomNum()
     let coluna = randomNum()
     let test = palavras.splice([Math.floor(Math.random()* palavras.length)],1).join('').split('')
+    
+    //eviar a palavra para o array de palavras selecionadas para verificaçao
     palavrasSelecionadas.push(test.join(''))
     
 
