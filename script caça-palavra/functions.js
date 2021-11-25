@@ -1,10 +1,82 @@
-let main = document.querySelector('section')
+let main = document.querySelector('#cacapalavras')
+let dif = document.querySelector('.dificuldade')
+let ptn = document.querySelector('#pts')
+let btn = document.querySelector('.rstBtn')
+let wBtn = document.querySelector('.winBtn')
+let wScrn = document.querySelector('#vitoria')
 
 // array de possiveis palavras 
 let palavrasRaiz = ['bigbang', 'cosmos','universo','estrela','explosão','andromeda']
 
-//array para add as palavras selecionadas pelo jogador
+//variaveis
+let numeroDePalavras = 0
 let palavrasSelecionadas = []
+let resposta = ''
+let score = []
+let pontuacao = 0
+let dificul = ''
+
+//event listeners
+function reset(){
+    score = []
+    resposta = ''
+    let divs = document.querySelectorAll('section')
+    for(let i of divs){
+        main.removeChild(i)
+        }
+    tal = tabela()
+    palavraTabelaFacil() 
+}
+
+function winCondition(){
+    if(score.length === numeroDePalavras){
+        if(score.length === 1){
+            pontuacao += 5
+        }else if(score.length === 2){
+            pontuacao += 10
+        }else{
+            pontuacao += 15
+        }
+        reset()
+      
+        pts.value = pontuacao
+        wScrn.classList.toggle('hidden')
+    }
+}
+wBtn.addEventListener('click',() => wScrn.classList.toggle('hidden'))
+
+main.addEventListener('click',(e) => {
+    let div = e.target
+    console.log(div)
+    if(div.tagName === 'SECTION'){
+    div.style.backgroundColor= 'green'
+    console.log(div.innerText)
+    resposta += div.innerText
+    console.log(div)
+    }
+    if(palavrasSelecionadas.includes(resposta)){
+        score.push(resposta)
+        resposta = ''
+    }
+})
+main.addEventListener('click',winCondition)
+
+dif.addEventListener('click',(e)=> {
+    let link = e.target
+    if(link.id === 'dfacil'){
+        reset()
+        numeroDePalavras = 1
+    }else if(link.id ==='dmedio'){
+        reset()
+        numeroDePalavras = 2
+    }else if(link.id === 'ddificil'){
+        reset()
+        numeroDePalavras = 3
+    }
+})
+
+btn.addEventListener('click',(e) => pts.value = 0)
+
 
 //funcao que gera uma letra aleatória de a-z
 function randomLetter (){
@@ -13,6 +85,7 @@ function randomLetter (){
     let letra = Math.floor(Math.random() * (max - min)) + 97;
     return String.fromCharCode(letra)
 }
+
 
 //funcao que cria um array bidimensional 10x10 com letras aleatorias 
 function tabela(){
@@ -31,7 +104,7 @@ let tal = tabela()
 let randomNum = () => Math.floor(Math.random()*9)
 
 //funcao que verifica se a palavra cabe no espaço horizontal ou vertical 
-function palavraTabela(){
+function palavraTabelaFacil(){
     let palavras = [...palavrasRaiz]
     let linha = randomNum()
     let coluna = randomNum()
@@ -137,39 +210,40 @@ for(let i = 0 ; i < test.length; i++){
 
     for(let i of tal){
         for(let j of i){
-          let div = document.createElement('div')
+          let div = document.createElement('section')
           div.innerText = j
           main.appendChild(div)
         }
     }
       
-    
-    let divs = document.querySelectorAll('div')
-    for(let i of divs){
-        i.addEventListener('click',(e) => {
-            let div = e.target
-            div.style.backgroundColor= 'green'
-            console.log(tal[1].indexOf(div.innerText))
-        })
-    }
+
+
+    //loop desnecessario
+    // let divs = document.querySelectorAll('section')
+    // for(let i of divs){
+    //     i.addEventListener('click',(e) => {
+    //         let div = e.target
+    //         div.style.backgroundColor= 'green'
+    //         console.log(div.innerText)
+    //         resposta += div.innerText
+    //         console.log(div)
+    //         if(palavrasSelecionadas.includes(resposta)){
+    //             score.push(resposta)
+    //             resposta = ''
+    //         }
+    //     })
+    //     i.addEventListener('click',winCondition)
+    // }
+
+ 
 }
+//------------------------------
 
 
 
-// function winCondition(){
-//     if(palavrasSelecionadas.includes('casa')){
-//         console.log('win')
-//     }
-// }
 
-function reset(){
-    let divs = document.querySelectorAll('div')
-    for(let i of divs){
-        main.removeChild(i)
-        }
-    tal = tabela()
-    palavraTabela()
-}
+
+
 
 
 

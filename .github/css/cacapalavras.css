@@ -3,6 +3,9 @@
 body {
     background-image: url(/imgcacapalavras/img/galaxy2.jpg);
     background-size: cover;
+    font-family: 'Lora',serif;
+    display: flex;
+    flex-flow: column;
 }
 
 h2 {
@@ -17,9 +20,10 @@ h2 {
 }
 
 img {
-    margin-top: -50px;
-    margin-left: 35px;
-    width: 23px;
+    /* margin-top: -50px;
+    margin-left: 35px; */
+    height: 35px;
+    margin-right: 20px;
 }
 
 h3.regrash3 {
@@ -27,47 +31,45 @@ h3.regrash3 {
     font-family: 'Lora',serif;
     color: #b0a8ce;
     text-shadow: black 0.1em 0.1em 0.2em;
-    margin-left: 115px;
-    margin-top: 15px;
+
 }
 
-h3.palavrastext {
+/* h3.palavrastext {
     font-size: 21px;
     font-family: 'Lora',serif;
     color: white;
     margin-left: 195px;
-}
+} */
 
 
 a {
     color: white;
     font-family: 'Lora',serif;
-    font-size: 16px;
+    font-size: 25px;
     text-decoration: none;
     margin-left: 22px;
     margin-top: 5px;
+
     width: 80%;
+
 }
 
 a:hover {
     color:#a296ca;
+    text-decoration: underline;
 }
 
-.user {
+/* .user {
     display: flex;
     justify-content: flex-end;
     margin-right: 200px;
     margin-top: -60px;
-}
+} */
 
 
 #regras {
     display: flex;
     margin-left: 130px;
-    margin-bottom: -350px;
-    margin-top: 120px;
-    height: 300px;
-    width: 300px;
     background-color: #2b1d5a93;
     border-radius: 10px;
     color: white;
@@ -76,40 +78,10 @@ a:hover {
 #box-regras {
     display: flex;
     margin-top: 55px;
-    margin-left: -135px;
+    align-self: center;
 }
 
-.regrastext {
-    margin-top: 10px;
-    margin-bottom: 30px;
-}
 
-.facil {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-}
-
-.dificil {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-
-}
-
-.medio {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-
-}
-
-.superdificil {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-
-}
 
 .escondido {
     visibility: hidden;
@@ -117,31 +89,33 @@ a:hover {
 
 
 #cacapalavras {
-    display: flex;
-    margin-left: 600px;
+    display: grid;
     margin-top: 5px;
     padding: 20px;
-    height: 350px;
-    width: 500px;
+    height: 540px;
+    min-width: 500px;
     border-radius:10px;
     background-color: #2b1d5a93;
     color: white;
+    grid-template-columns: repeat(10,auto);
+
 }
 
 label {
     color: white;
     text-shadow: #b0a8ce 0.1em 0.1em 0.2em;
     font-family: 'Lora',serif;
-    font-size: 16px;
-    margin-top: -20px;
-    margin-right: -125px;
+    font-size: 18px;
+    /* margin-top: -20px;
+    margin-right: -125px; */
+    margin-right: 20px;
 }
 
 input {
     background-color: #a296cacb;
     border: 1px solid black;
     border-radius: 10px;
-    margin-right: 60px;
+    margin-right: 20px;
 }
 
 div.dificuldade {
@@ -149,9 +123,109 @@ div.dificuldade {
     flex-direction: column;
     width: 10%;
     margin-left: 50px;
+
+ 
 }
 
 p {
     text-shadow: black 0.1em 0.1em 0.2em;
+    color: white;
+    font-size: 20px;
 }
 
+
+section{
+    background-color: #2b1d5a93;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+div{
+    border-radius: 15px;
+}
+
+header{
+    display: flex;
+    margin-top: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.facil{
+    max-width: 350px;
+    margin-right: 200px;
+    margin-top: 100px;
+    background-color: #2b1d5a93;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+
+}
+.regrasText{
+    margin: 25px;
+}
+#pts{
+    width: 50px;
+    height: 35px;
+    font-size: 30px;
+    text-align: center;
+}
+.pontos{
+    display: flex;
+    align-items: center;
+}
+
+.rstBtn{
+    border: black 3px solid;
+    border-radius: 15px;
+    background-color: rgba(0, 55, 128, 0.418);
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    background-color: green;
+}
+.dificuldade p{
+    font-size: 25px;
+    font-weight: bold;
+    align-self: end;
+    margin-left: 20px;
+}
+
+#vitoria{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: #000000d6;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.winBtn{
+    height: 100px;
+    width: 200px;
+    margin-left: 40vw;
+    border: black 3px solid;
+    border-radius: 15px;
+    background-color: rgba(0, 55, 128, 0.418);
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    background-color: green;
+    font-size: 50px;
+
+
+}
+
+#pVitoria{
+    font-size: 90px;
+    margin-bottom: 100px;
+    margin-top: 35vh;
+    margin-left: 20vw;
+}
+
+.hidden{
+    display: none;
+}
