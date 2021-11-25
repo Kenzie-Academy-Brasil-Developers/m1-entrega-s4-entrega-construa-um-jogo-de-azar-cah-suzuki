@@ -21,7 +21,7 @@ if(userName === null){
 
 
 // array de possiveis palavras 
-let palavrasRaiz = ['bigbang', 'cosmos','universo','estrela','explosao','andromeda']
+let palavrasRaiz = ['dimensao', 'satelites', 'cometas', 'gravidade', 'nebulosas', 'densidade', 'energia', 'colapso', 'teoria', 'nuvens', 'espaço', 'cosmos', 'andromeda' ,'hawking' , 'einstein', 'sagan','atomo']
 
 //variaveis
 let numeroDePalavras = 0
