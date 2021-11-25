@@ -4,26 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/paginainicial.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
     <title>Jogos de Azar</title>
 </head>
 <body>
     <header>
         <h1>Jogos de Azar</h1>
         <form id="form">
-            <label for="username">Digite seu nome e escolha o jogo</label>
-            <input type="text" name="username" id="username">
-            <button type="submit">Registrar</button>
+            <label for="username">Digite seu nome e escolha o jogo nos cards abaixo</label>
+            <input type="text" name="username" id="username" placeholder="Digite seu nome ou apelido">
         </form>
     </header>
     <main>
      <section>
          <div class="link1">
-            <a href="http://127.0.0.1:5501/.github/html/cacapalavras.html"><img src="/imgpaginainicial/crossword.png"></a>
+            <a href="http://127.0.0.1:5501/.github/html/cacapalavras.html">
+                <figure>
+                    <img src="/imgpaginainicial/crossword.png"" alt="Icone minimalista representando um jogo de caça palavras">
+                    <figcaption>Caça Palavras</figcaption>
+                </figure>
+            </a>
          </div>
          <div class="link2">
-            <a href="http://127.0.0.1:5501/.github/html/jokenpo.html"><img src="/imgpaginainicial/rock-paper-scissors.png"></a>
+            <a href="http://127.0.0.1:5501/.github/html/jokenpo.html">
+                <figure>
+                    <img src="/imgpaginainicial/rock-paper-scissors.png" alt="Icone minimalista representando um jogo de pedra,papel e tesoura">
+                    <figcaption>Pedra, Papel e Tesoura</figcaption>
+                </figure>
+            </a>
          </div>
      </section>
     </main>
@@ -37,6 +46,5 @@
             </ul>
         </div> 
     </footer>
-    <script src="../js/msgvitoria.js"></script>
 </body>
 </html>

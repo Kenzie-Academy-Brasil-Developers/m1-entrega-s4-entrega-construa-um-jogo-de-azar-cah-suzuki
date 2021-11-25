@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Genos&display=swap');
 
 header {
     height: 200px;
@@ -12,16 +13,18 @@ header {
 
 label {
     margin-top: 50px;
+    font-size: 20px;
+    text-align: center;
 }
 
 header h1 {
-    font-size: 25px;
+    font-size: 46px;
 }
 
 body {
     background-image: url("/imgpaginainicial/wpp3.jpg");
     background-size: cover;
-    font-family: 'Lora', serif;
+    font-family: 'Genos', sans-serif;
     color: white;
 }
 
@@ -31,7 +34,7 @@ section {
     height: 540px;
     margin-top: 50px;
     align-items: center;
-}    
+}
 
 .link1 {
     height: 240px;
@@ -61,8 +64,18 @@ section {
     margin-top: 50px;
 }
 
-img {
+figure{
     width: 100px;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+figcaption{
+    font-size: 22px;
+    margin-top: 5px;
 }
 
 a {    
@@ -91,21 +104,19 @@ a:hover {
 }
 
 
-.inputButton { 
-
-}
-
 input {
     background-color: rgba(167, 144, 221, 0.651) ;
     border: 1px solid transparent;
     margin-top: 15px;
     border-radius: 2em;
+    width: 200px;
+    height: 40px;
+    color: white;
 }
 
-
-footer {
-    
-}
+input::placeholder {
+    color: white;
+  }
 
 button {
     background-color: transparent;
@@ -121,13 +132,13 @@ button {
     margin-top: 25px;
     font-size: 15px;
     padding-right: 15px;
-    font-size: 12px;
+    font-size: 22px;
     color: white;
     background-color: #4c1c4667;
     border-radius: 2em;
 }
 
-@media screen and (min-device-width: 800px){
+@media screen and (min-width: 800px){
 
     
     body {
@@ -140,7 +151,7 @@ button {
     }
 
     header h1 {
-        font-size: 26px;
+        font-size: 72px;
     }
 
     section {
@@ -152,6 +163,10 @@ button {
 
     a {
         font-size: 40px;
+    }
+
+    label {
+        font-size: 26px;
     }
 
     .link1 {
@@ -166,10 +181,15 @@ button {
         margin-top: 0px;
     }
 
-    img {
-        width:150px;
+    figure{
+        width: 150px;
+        text-align: center;
     }
-
+    
+    img {
+        width: 100%;
+    }
+   
     .inputButton { 
        
         height: 50px;
