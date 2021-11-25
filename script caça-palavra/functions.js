@@ -35,6 +35,7 @@ let dificul = ''
 //event listeners
 function reset(){
     score = []
+    palavrasSelecionadas = []
     resposta = ''
     let divs = document.querySelectorAll('section')
     for(let i of divs){
