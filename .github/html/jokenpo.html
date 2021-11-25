@@ -8,6 +8,21 @@
     <title>Jogos de Azar</title>
 </head>
 <body>
+  
+
+ 
+
+    <!-- The Modal -->
+<!-- <div id="mensagemModal" class="modal"> -->
+
+  <!-- Modal content -->
+    <!-- <div class="modal-content">
+     <span class="close">&times;</span>
+     <p class="p-message">Some text</p>
+    </div>
+</div> -->
+
+
     <header>
         <figure>
             <img src="../img/logo.png" alt="Logo galaxy">
@@ -28,6 +43,15 @@
             </p>
 
         </div>
+
+        <div class="modal-bg">
+            <div class="modal" >
+                <div id="modal-result"></div>
+                
+                <button class="modal-btn">Modal</button>
+            </div>
+        </div>
+
     <div class="container-acima">
   
         <div class="jogador">
@@ -158,25 +182,51 @@
     const cardQuatro =document.querySelector("#cardQuatro")
     const cardCinco = document.querySelector("#cardCinco")
     const cardSeis = document.querySelector("#cardSeis")
-
-    const arrayCardsPc = ["cardUm","cardDois","cardTres"]
-    const arrayOpcoesjoKenPo = [["cardUm","Pedra"],["cardDois","Papel"],["cardTres","Tesoura"]]
-
-    const objOpcoesJoKenPo = {
-        cardUm: "Pedra",
-        cardDois: "Papel",
-        cardTres:"Tesoura"
-    }
-
-
+    // const inputModal = document.getElementById("mensagemModal")
+    // const inputModalContent = document.getElementById("modal-content")
+    // const closeSpan = document.getElementsByClassName("close")[0]
+    // const pMessage = document.getElementsByClassName("p-message")
+    const modalBtn = document.querySelector(".modal-btn")
+    const modalBg = document.querySelector(".modal-bg")
     
-     //  cardDois
+    const arrayCardsPc = ["cardUm","cardDois","cardTres"]
 
-    // let idDoCard=card.id
-    // console.log(idDoCard)
+  
+    // function showModal(inputModal,inputModalContent,closeSpan,pMessage,message){
+    //     let p = document.createElement("p")
+    //     let texto = document.createTextNode(message);
+    //     console.log(message)
+
+    //     inputModal.style.display = "block"
+    //     function incia(){
+    //         pMessage.textContent=message
+    //     }
+        
+
+    //     closeSpan.onclick = function() {
+    //       inputModal.style.display = "none";
+    //     }
+
+    //     window.onclick = function(event) {
+    //       if (event.target == inputModal) {
+    //       inputModal.style.display = "none";
+    //       }
+    //     }
+    // }
+
+    function showModal(message){
+        modalBg.classList.add("bg-active")
+        let p = document.createElement("p")
+        p.innerHTML=message
+        document.querySelector("#modal-result").appendChild(p)
+        modalBtn.addEventListener("click",function(){
+            modalBg.classList.remove("bg-active")
+        })
+    }
+  
+
     function cardRandomico(arrayCardsPc){
         let cardRandomico = arrayCardsPc[Math.floor(Math.random() * (3 - 0)) + 0];
-   
         return cardRandomico
     }
 
@@ -207,19 +257,19 @@
     function winOrLose(currentEscolha,currentPc){
           let message = ""
         if (currentEscolha === currentPc){
-           message ="empate!!"
+           message ="Empate!!"
         } else if (currentEscolha === "pedra" && currentPc === "papel"){
-            message ="perdeu!!"
+            message ="Perdeu!!"
         } else if (currentEscolha === "pedra" && currentPc === "tesoura"){
-            message ="ganhou!!"
+            message ="Ganhou!!"
         } else if (currentEscolha === "papel" && currentPc === "tesoura"){
-            message ="perdeu!!"
+            message ="Perdeu!!"
         } else if (currentEscolha === "papel" && currentPc === "pedra"){
-            message ="ganhou!!"
+            message ="Ganhou!!"
         } else if (currentEscolha === "tesoura" && currentPc === "pedra"){
-            message ="perdeu!!"
+            message ="Perdeu!!"
         } else if (currentEscolha === "tesoura" && currentPc === "papel"){
-            message ="ganhou!!"
+            message ="Ganhou!!"
         }
         return message
       }
@@ -243,16 +293,10 @@
   
   
 
-      cardQuatro.addEventListener("click",(e)=>{
+    cardQuatro.addEventListener("click",(e)=>{
         let currentId = e.currentTarget.id
         let currentPc = ""
-        let currentEscolha = e.currentTarget.id
-       
-       
-            console.log(currentId);
-            console.log("current escolha "+currentEscolha); 
-
-       
+        let currentEscolha = e.currentTarget.id 
 
          
 
@@ -268,7 +312,7 @@
                cardTres.classList.toggle("flip")
            }
            currentPc = cardUm.id
-           console.log(currentPc)
+       
       }else if (cardRandomico(arrayCardsPc).valueOf() === cardDois.id){
           if (cardDois.classList.contains("flip")){
             cardDois.classList.toggle("flip")
@@ -280,7 +324,7 @@
                cardUm.classList.toggle("flip")
            }
            currentPc = cardDois.id
-           console.log(currentPc)
+      
 
       } else {
           if (cardTres.classList.contains("flip")){
@@ -294,7 +338,7 @@
                cardUm.classList.toggle("flip")
            }
            currentPc = cardTres.id
-           console.log(currentPc)
+      
 
       }
                 
@@ -310,16 +354,22 @@
     
         currentPc = currentPcToString(currentPc)
         currentEscolha = currentEscolhaToString(currentEscolha)
-        console.log(winOrLose(currentEscolha,currentPc))
+       
+         showModal(winOrLose(currentEscolha,currentPc))
 
-
- 
+        
+      
  
     })
 
   
 
     cardCinco.addEventListener("click",(e)=>{
+        let currentId = e.currentTarget.id
+        let currentPc = ""
+        let currentEscolha = e.currentTarget.id 
+
+
         if (cardRandomico(arrayCardsPc).valueOf() === cardUm.id){
           if (cardUm.classList.contains("flip")){
             cardUm.classList.toggle("flip")
@@ -331,6 +381,7 @@
            if (!cardTres.classList.contains("flip")){
                cardTres.classList.toggle("flip")
            }
+           currentPc = cardUm.id
       }else if (cardRandomico(arrayCardsPc).valueOf() === cardDois.id){
           if (cardDois.classList.contains("flip")){
             cardDois.classList.toggle("flip")
@@ -341,6 +392,7 @@
            if (!cardUm.classList.contains("flip")){
                cardUm.classList.toggle("flip")
            }
+           currentPc = cardDois.id
 
       } else {
           if (cardTres.classList.contains("flip")){
@@ -353,6 +405,7 @@
            if (!cardUm.classList.contains("flip")){
                cardUm.classList.toggle("flip")
            }
+           currentPc = cardTres.id
 
       }
 
@@ -367,12 +420,21 @@
         if (cardSeis.classList.contains("flip")){
             cardSeis.classList.toggle("flip")
         }
+
+        currentPc = currentPcToString(currentPc)
+        currentEscolha = currentEscolhaToString(currentEscolha)
      
-  
+        showModal(winOrLose(currentEscolha,currentPc))
      
     })
 
     cardSeis.addEventListener("click",(e)=>{
+        let currentId = e.currentTarget.id
+        let currentPc = ""
+        let currentEscolha = e.currentTarget.id 
+       
+
+
         if (cardRandomico(arrayCardsPc).valueOf() === cardUm.id){
           if (cardUm.classList.contains("flip")){
             cardUm.classList.toggle("flip")
@@ -384,6 +446,7 @@
            if (!cardTres.classList.contains("flip")){
                cardTres.classList.toggle("flip")
            }
+           currentPc = cardUm.id
       }else if (cardRandomico(arrayCardsPc).valueOf() === cardDois.id){
           if (cardDois.classList.contains("flip")){
             cardDois.classList.toggle("flip")
@@ -394,6 +457,7 @@
            if (!cardUm.classList.contains("flip")){
                cardUm.classList.toggle("flip")
            }
+           currentPc = cardDois.id
 
       } else {
           if (cardTres.classList.contains("flip")){
@@ -406,6 +470,7 @@
            if (!cardUm.classList.contains("flip")){
                cardUm.classList.toggle("flip")
            }
+           currentPc = cardTres.id
 
       }
      
@@ -419,6 +484,12 @@
         if (cardCinco.classList.contains("flip")){
             cardCinco.classList.toggle("flip")
         }
+        console.log(currentEscolha)
+
+        currentPc = currentPcToString(currentPc)
+        currentEscolha = currentEscolhaToString(currentEscolha)
+
+        showModal(winOrLose(currentEscolha,currentPc))
     })
 </script>
 
