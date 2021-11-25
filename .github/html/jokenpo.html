@@ -176,11 +176,11 @@
     // console.log(idDoCard)
     function cardRandomico(arrayCardsPc){
         let cardRandomico = arrayCardsPc[Math.floor(Math.random() * (3 - 0)) + 0];
-        console.log(cardRandomico)
+   
         return cardRandomico
     }
 
-    function resetCards(){
+    function reset(){
      if (!cardUm.classList.contains("flip")){
                cardUm.classList.toggle("flip")
         }else if (!cardDois.classList.contains("flip")){
@@ -199,6 +199,16 @@
   
 
       cardQuatro.addEventListener("click",(e)=>{
+        let currentId = e.currentTarget.id
+        let currentPc = ""
+        let currentEscolha=""
+        currentEscolha = "pedra"
+       
+       
+            console.log(currentId);
+
+         
+
       if (cardRandomico(arrayCardsPc).valueOf() === cardUm.id){
           if (cardUm.classList.contains("flip")){
             cardUm.classList.toggle("flip")
@@ -210,16 +220,20 @@
            if (!cardTres.classList.contains("flip")){
                cardTres.classList.toggle("flip")
            }
+           currentPc = cardUm.id
+           console.log(currentPc)
       }else if (cardRandomico(arrayCardsPc).valueOf() === cardDois.id){
           if (cardDois.classList.contains("flip")){
             cardDois.classList.toggle("flip")
           }
-        if (!cardTres.classList.contains("flip")){
+          if (!cardTres.classList.contains("flip")){
                cardTres.classList.toggle("flip")
            }
            if (!cardUm.classList.contains("flip")){
                cardUm.classList.toggle("flip")
            }
+           currentPc = cardDois.id
+           console.log(currentPc)
 
       } else {
           if (cardTres.classList.contains("flip")){
@@ -232,8 +246,8 @@
            if (!cardUm.classList.contains("flip")){
                cardUm.classList.toggle("flip")
            }
-
-      
+           currentPc = cardTres.id
+           console.log(currentPc)
 
       }
     
@@ -247,6 +261,24 @@
         if (cardSeis.classList.contains("flip")){
             cardSeis.classList.toggle("flip")
         }
+        /////logica win
+        if(currentPc === "cardUm"){
+            currentPc = "pedra"
+        } else if (currentPc === "cardDois"){
+            currentPc = "papel"
+        } else {
+            currentPc = "tesoura"
+        }
+
+        if (currentEscolha === "pedra" && currentPc === "papel"){
+           console.log("perdeu!!")
+        } else if (currentEscolha === "pedra" && currentPc === "pedra"){
+            console.log("empate!!")
+        } else {
+            console.log("ganhou!!")
+        }
+        
+ 
     })
 
     cardCinco.addEventListener("click",(e)=>{
@@ -350,8 +382,6 @@
             cardCinco.classList.toggle("flip")
         }
     })
-
-  
 </script>
 
 <footer>
