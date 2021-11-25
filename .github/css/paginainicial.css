@@ -109,7 +109,7 @@ input {
     border: 1px solid transparent;
     margin-top: 15px;
     border-radius: 2em;
-    width: 200px;
+    width: 161px;
     height: 40px;
     color: white;
 }
@@ -130,9 +130,8 @@ button {
     display: flex;
     justify-content: flex-end;
     margin-top: 25px;
-    font-size: 15px;
     padding-right: 15px;
-    font-size: 22px;
+    font-size: 10px;
     color: white;
     background-color: #4c1c4667;
     border-radius: 2em;
