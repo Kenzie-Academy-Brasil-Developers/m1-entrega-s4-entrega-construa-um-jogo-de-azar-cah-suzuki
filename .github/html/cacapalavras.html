@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,49 +10,52 @@
     <link rel="stylesheet" href="../css/cacapalavras.css">
     <script src="/script caça-palavra/functions.js" defer></script>
 </head>
+
 <body>
-<header>
-    <img src="/imgcacapalavras/img/favicon-32x32.png">
+    <header>
+        <img src="/imgcacapalavras/img/favicon-32x32.png">
 
-<div class="dificuldade">
-    <p>Dificuldade:</p>
-    <a id='dfacil' href="#">Fácil</a>
-    <p>|</p>
-    <a id='dmedio' href="#">Médio</a>
-    <p>|</p>
-    <a id='ddificil' href="#">Difícil</a>
-</div>
+        <div class="dificuldade">
+            <p>Dificuldade:</p>
+            <a id='dfacil' href="#">Fácil</a>
+            <p>|</p>
+            <a id='dmedio' href="#">Médio</a>
+            <p>|</p>
+            <a id='ddificil' href="#">Difícil</a>
+        </div>
 
-<div class="user">
-    <label for="user">Usuário</label>
-    <input type="text" id="user" name="user">
-</div>
-<div class="pontos">
-    <label for="pts">Pontuação</label>
-    <input type="text" id="pts" name="pts">
-</div>
-    <button class='rstBtn'>Reset</button>
-</div>
-</header>
-
-    <div id="palavras-sugeridas">
-        <h3 class= "palavrash3">Palavras sugeridas:</h3>
-    </div>
-
+        <div class="user">
+            <label for="user">Usuário</label>
+            <input type="text" id="user" name="user">
+        </div>
+        <div class="pontos">
+            <label for="pts">Pontuação</label>
+            <input type="text" id="pts" name="pts">
+        </div>
+        <button class='rstBtn'>Reset</button>
+        </div>
+    </header>
     <div id="box-regras">
         <div class="facil">
             <h3 class="regrash3">Regras:</h3>
-            <p class="regrasText">Três palavras estão escondidas neste emaranhado de letras, as palavras estão dispostas em direções diferentes de acordo com a dificuldade. Será que você consegue encontrar? Clique e pinte os quadradinhos.</p>
-            <p>Fácil:   1 palavra (5 pts)</p>
-            <p>Medio:   2 palavras (10 pts)</p>
+            <p class="regrasText">Três palavras estão escondidas neste emaranhado de letras, as palavras estão dispostas
+                em direções diferentes de acordo com a dificuldade. Será que você consegue encontrar? Clique e pinte os
+                quadradinhos.</p>
+            <p>Fácil: 1 palavra (5 pts)</p>
+            <p>Medio: 2 palavras (10 pts)</p>
             <p>Dificil: 3 palavras (15 pts)</p>
         </div>
 
-<div id="cacapalavras"></div>
+        <div id="cacapalavras"></div>
     </div>
-    <div id="vitoria" class ='hidden'>
+    <div id="vitoria" class='hidden'>
         <p id='pVitoria'>Parabéns, você ganhou!!! :)</p>
         <button class="winBtn"'>👽</button>
     </div>
+    <footer>
+        <div id="palavras-sugeridas">
+            <h3 class= "palavrash3">Palavras sugeridas:</h3>
+        </div>
+    </footer>
 </body>
 </html>
