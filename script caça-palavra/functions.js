@@ -118,18 +118,21 @@ while(test.length + coluna > tal.length-1){
     coluna = randomNum()
 }
 
-//loop que joga cada letra da string dentro do array 
+
 let letrasUsadas = []
+//loop que joga cada letra da string dentro do array 
 for(let i = 0 ; i < test.length; i++){
     tal[linha+i][coluna+i] = test[i]
     letrasUsadas.push([linha+i,coluna+i])
 }
 
 //escolher nova palavra aleatoria na horizontal 
+    //armazeno uma palavra aleatoria dentro do array principal usando retorno do splice para que as palavras nao se repitam 
     test = palavras.splice([Math.floor(Math.random()* palavras.length)],1).join('').split('')
     linha2 = randomNum()
     coluna2 = randomNum()
     letrasUsadas2 = []
+    //palavra escolhida é transformada em string
     palavrasSelecionadas.push(test.join(''))
 
 
