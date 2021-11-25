@@ -4,30 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/paginainicial.css">
     <title>Jogos de Azar</title>
 </head>
 <body>
     <header>
         <h1>Jogos de Azar</h1>
-        <form id="form">
+         <div id="form">
             <label for="username">Digite seu nome e escolha o jogo nos cards abaixo</label>
-            <input type="text" name="username" id="username" placeholder="Digite seu nome ou apelido">
-        </form>
+            <input type="text" name="username" id="username" placeholder="Digite seu nome ou apelido" onchange="handleChange()">
+        </div>
     </header>
     <main>
      <section>
          <div class="link1">
-            <a href="http://127.0.0.1:5501/.github/html/cacapalavras.html">
+            <a href="cacapalavras.html" id="link1">
                 <figure>
-                    <img src="/imgpaginainicial/crossword.png"" alt="Icone minimalista representando um jogo de caça palavras">
+                    <img src="/imgpaginainicial/crossword.png" alt="Icone minimalista representando um jogo de caça palavras">
                     <figcaption>Caça Palavras</figcaption>
                 </figure>
             </a>
          </div>
          <div class="link2">
-            <a href="http://127.0.0.1:5501/.github/html/jokenpo.html">
+            <a href="jokenpo.html" id="link2">
                 <figure>
                     <img src="/imgpaginainicial/rock-paper-scissors.png" alt="Icone minimalista representando um jogo de pedra,papel e tesoura">
                     <figcaption>Pedra, Papel e Tesoura</figcaption>
@@ -46,5 +46,7 @@
             </ul>
         </div> 
     </footer>
+    <script src="../js/paginaInicial.js"></script>
 </body>
 </html>
+
