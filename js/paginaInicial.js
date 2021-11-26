@@ -8,9 +8,7 @@ let inputLink2Value = inputLink2.href
 
 function handleChange(){
     inputLink1.href = inputLink1Value + "?name=" + inputUserName.value
-    console.log(inputLink1.href)
     inputLink2.href = inputLink2Value + "?name=" + inputUserName.value
-    console.log(inputLink2.href)
 }
 
 inputUserName.addEventListener('change', handleChange);

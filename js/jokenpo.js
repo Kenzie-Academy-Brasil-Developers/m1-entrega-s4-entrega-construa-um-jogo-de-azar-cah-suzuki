@@ -18,6 +18,7 @@ const arrayCardsPc = ["cardUm","cardDois","cardTres"]
 let userName = urlParams.get("name")
 outputNomeJogador.innerHTML=userName
 outputNomeJogadorModal.innerHTML=userName
+console.log(userName)
 
 modalBtn.addEventListener("click",function(){
     console.log("clicked on modal");
