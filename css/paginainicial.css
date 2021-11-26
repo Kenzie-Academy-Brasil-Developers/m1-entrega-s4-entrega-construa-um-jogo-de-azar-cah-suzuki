@@ -22,7 +22,7 @@ header h1 {
 }
 
 body {
-    background-image: url("/imgpaginainicial/wpp3.jpg");
+    background-image: url("../img-paginainicial/wpp3.jpg");
     background-size: cover;
     font-family: 'Genos', sans-serif;
     color: white;

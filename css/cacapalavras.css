@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script&family=Lato:wght@100&family=Lora:ital,wght@0,400;1,400;1,500&family=Montserrat:wght@100&family=PT+Sans+Narrow&family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Genos&display=swap');
 body {
-    background-image: url(/imgcacapalavras/img/galaxy2.jpg);
+    background-image: url(../img-cacapalavras/galaxy2.jpg);
     background-size: cover;
     font-family: 'Genos', sans-serif;
     display: flex;
