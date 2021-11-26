@@ -36,6 +36,10 @@ section {
     align-items: center;
 }
 
+li{
+    font-size: 22px;
+}
+
 .link1 {
     height: 240px;
     width: 250px;
