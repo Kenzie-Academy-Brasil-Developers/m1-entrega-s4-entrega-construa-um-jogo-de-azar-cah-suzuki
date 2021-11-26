@@ -6,7 +6,7 @@ html{
 }
 
 body {
-    background-image: url(/img-cacapalavras/backgroundMobile.jpg);
+    background-image: url(../img-cacapalavras/backgroundMobile.jpg);
     background-size: cover;
     font-family: 'Genos', sans-serif;
     display: flex;
@@ -311,7 +311,7 @@ header{
 
 @media screen and (min-width:800px) and (max-width:1199px){
     body {
-        background-image: url(/img-cacapalavras/galaxy2.jpg);
+        background-image: url(../img-cacapalavras/galaxy2.jpg);
     }
 
     header{
@@ -379,7 +379,7 @@ header{
 
 @media screen and (min-width:1200px){
     body {
-        background-image: url(/img-cacapalavras/galaxy2.jpg);
+        background-image: url(../img-cacapalavras/galaxy2.jpg);
     }
 
     header{
