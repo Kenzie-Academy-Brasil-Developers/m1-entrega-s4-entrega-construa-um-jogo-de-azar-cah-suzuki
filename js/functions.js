@@ -342,10 +342,6 @@ palavrasSelecionadas.push(test.reverse().join(''))
     //eviar a palavra para o array de palavras selecionadas para verificaçao
     palavrasSelecionadas.push(test.reverse().join(''))
 
-    console.log('diagonal' ,linha ,coluna)
-    console.log('horizontal' ,linha2 ,coluna2)
-    console.log('vertical',linha3,coluna3)
-
 
 
     for(let i of tal){
