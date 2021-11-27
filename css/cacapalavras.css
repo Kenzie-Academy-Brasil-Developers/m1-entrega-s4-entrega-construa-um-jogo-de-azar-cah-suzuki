@@ -195,6 +195,7 @@ section{
     border-radius: 10px;
     font-size: 25px;
     flex: 1;
+    cursor: pointer;
 }
 
 div{
