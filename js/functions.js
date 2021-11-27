@@ -48,12 +48,18 @@ function winCondition(){
     if(score.length === numeroDePalavras){
         if(score.length === 1){
             pontuacao += 5
+            reset()
+            palavraTabelaFacil()
         }else if(score.length === 2){
+            reset()
+            palavraTabelaFacil()
             pontuacao += 10
         }else{
+            reset()
+            palavraTabelaDificil()
             pontuacao += 15
         }
-        reset()
+        
       
         pts.value = pontuacao
         wScrn.classList.toggle('hidden')
