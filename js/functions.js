@@ -50,19 +50,21 @@ function winCondition(){
             pontuacao += 5
             reset()
             palavraTabelaFacil()
+            pts.value = pontuacao
+            wScrn.classList.toggle('hidden')
         }else if(score.length === 2){
             reset()
             palavraTabelaFacil()
             pontuacao += 10
-        }else{
+            pts.value = pontuacao
+            wScrn.classList.toggle('hidden')
+        }else if(score.length === 3){
             reset()
             palavraTabelaDificil()
             pontuacao += 15
+            pts.value = pontuacao
+            wScrn.classList.toggle('hidden')
         }
-        
-      
-        pts.value = pontuacao
-        wScrn.classList.toggle('hidden')
     }
 }
 wBtn.addEventListener('click',() => wScrn.classList.toggle('hidden'))
@@ -225,9 +227,6 @@ for(let i = 0 ; i < test.length; i++){
         letrasUsadas3.push([linha2,coluna2+i])
     }
 
-    console.log('diagonal' ,linha ,coluna)
-    console.log('horizontal' ,linha2 ,coluna2)
-    console.log('vertical',linha3,coluna3)
 
 
 
