@@ -83,15 +83,17 @@ main.addEventListener('click',(e) => {
 main.addEventListener('click',winCondition)
 
 dif.addEventListener('click',(e)=> {
-    reset()
     let link = e.target
     if(link.id === 'dfacil'){
+        reset()
         palavraTabelaFacil()
         numeroDePalavras = 1
     }else if(link.id ==='dmedio'){
+        reset()
         palavraTabelaFacil()
         numeroDePalavras = 2
     }else if(link.id === 'ddificil'){
+        reset()
         palavraTabelaDificil()
         numeroDePalavras = 3
     }
