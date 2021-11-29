@@ -42,22 +42,29 @@ function reset(){
         main.removeChild(i)
         }
     tal = tabela()
-    palavraTabelaFacil() 
 }
 
 function winCondition(){
     if(score.length === numeroDePalavras){
         if(score.length === 1){
             pontuacao += 5
+            reset()
+            palavraTabelaFacil()
+            pts.value = pontuacao
+            wScrn.classList.toggle('hidden')
         }else if(score.length === 2){
+            reset()
+            palavraTabelaFacil()
             pontuacao += 10
-        }else{
+            pts.value = pontuacao
+            wScrn.classList.toggle('hidden')
+        }else if(score.length === 3){
+            reset()
+            palavraTabelaDificil()
             pontuacao += 15
+            pts.value = pontuacao
+            wScrn.classList.toggle('hidden')
         }
-        reset()
-      
-        pts.value = pontuacao
-        wScrn.classList.toggle('hidden')
     }
 }
 wBtn.addEventListener('click',() => wScrn.classList.toggle('hidden'))
@@ -79,12 +86,15 @@ dif.addEventListener('click',(e)=> {
     let link = e.target
     if(link.id === 'dfacil'){
         reset()
+        palavraTabelaFacil()
         numeroDePalavras = 1
     }else if(link.id ==='dmedio'){
         reset()
+        palavraTabelaFacil()
         numeroDePalavras = 2
     }else if(link.id === 'ddificil'){
         reset()
+        palavraTabelaDificil()
         numeroDePalavras = 3
     }
 })
@@ -219,9 +229,125 @@ for(let i = 0 ; i < test.length; i++){
         letrasUsadas3.push([linha2,coluna2+i])
     }
 
-    console.log('diagonal' ,linha ,coluna)
-    console.log('horizontal' ,linha2 ,coluna2)
-    console.log('vertical',linha3,coluna3)
+
+
+
+    for(let i of tal){
+        for(let j of i){
+          let div = document.createElement('section')
+          div.innerText = j
+          main.appendChild(div)
+        }
+    }
+      
+
+
+ 
+}
+
+function palavraTabelaDificil(){
+    let palavras = [...palavrasRaiz]
+    let linha = randomNum()
+    let coluna = randomNum()
+    let test = palavras.splice([Math.floor(Math.random()* palavras.length)],1).join('').split('').reverse()
+    
+    
+
+
+//teste para averiguar se a palavra cabe na diagonal
+while(test.length + linha > tal.length-1){
+    linha = randomNum()
+}
+
+while(test.length + coluna > tal.length-1){
+    coluna = randomNum()
+}
+
+
+let letrasUsadas = []
+//loop que joga cada letra da string dentro do array 
+for(let i = 0 ; i < test.length; i++){
+    tal[linha+i][coluna+i] = test[i]
+    letrasUsadas.push([linha+i,coluna+i])
+}
+
+//eviar a palavra para o array de palavras selecionadas para verificaçao
+palavrasSelecionadas.push(test.reverse().join(''))
+
+//escolher nova palavra aleatoria na horizontal 
+    //armazeno uma palavra aleatoria dentro do array principal usando retorno do splice para que as palavras nao se repitam 
+    test = palavras.splice([Math.floor(Math.random()* palavras.length)],1).join('').split('').reverse()
+    linha2 = randomNum()
+    coluna2 = randomNum()
+    letrasUsadas2 = []
+
+
+    //condicional para evitar que que a palavra na horizontal sobscreva a na diagonal 
+    if(linha2 >= letrasUsadas[0][0] && letrasUsadas[0][0] > 0){
+        linha2 = letrasUsadas[0][0]-1
+    }else{
+        linha2 = letrasUsadas[letrasUsadas.length-1][0]+1
+    }
+
+    //loop que averigua se a palavra pode sair fora do grid 10x10 e ajusta sua posiçao
+    while(test.length + coluna2 > tal.length-1 ){ 
+        coluna2 = randomNum()
+    }
+
+    //loop criar palavra na horizontal 
+    for(let i = 0 ; i < test.length; i++){
+        tal[linha2][coluna2+i] = test[i]
+        letrasUsadas2.push([linha2,coluna2+i])
+    }
+    //eviar a palavra para o array de palavras selecionadas para verificaçao
+    palavrasSelecionadas.push(test.reverse().join(''))
+
+       
+    
+    //averiguar qual das colunas vem primeiro, para evitar conflito na hora de adicionar a palavra na vertical 
+    let primeiracol
+    let lastcol
+    if(letrasUsadas[0][1] <= letrasUsadas2[0][1]){
+        primeiracol = letrasUsadas[0][1]
+    }else{
+        primeiracol = letrasUsadas2[0][1]
+    }
+
+    if(letrasUsadas[letrasUsadas.length-1][1] >= letrasUsadas2[letrasUsadas2.length-1][1]){
+        lastcol = letrasUsadas[letrasUsadas.length-1][1]
+    }else{
+        lastcol = letrasUsadas2[letrasUsadas2.length-1][1]
+    }
+
+    let colvertical
+    
+    if(primeiracol <=0){
+        colvertical = lastcol+1
+    }else{
+        colvertical = primeiracol -1
+    }
+
+    //------------------------------------------
+
+    //escolher nova palavra aleatoria na vertical
+    test = palavras.splice([Math.floor(Math.random()* palavras.length)],1).join('').split('').reverse()
+    linha3 = randomNum()
+    coluna3 = colvertical
+    letrasUsadas3 = []
+
+
+    while(test.length + linha3 > tal.length - 1){
+        linha3 = randomNum()
+    }
+    
+
+    //loop criar palavra na vertical
+    for(let i = 0 ; i < test.length; i++){
+        tal[linha3+i][coluna3] = test[i]
+        letrasUsadas3.push([linha2,coluna2+i])
+    }
+    //eviar a palavra para o array de palavras selecionadas para verificaçao
+    palavrasSelecionadas.push(test.reverse().join(''))
 
 
 
