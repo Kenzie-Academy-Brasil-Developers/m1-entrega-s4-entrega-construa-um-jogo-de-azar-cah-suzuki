@@ -62,11 +62,13 @@ img {
     height: 100%;
 }
 
+
 h3.regrash3 {
-    font-size: 30px;
+    font-size: 20px;
     font-family: 'Genos', sans-serif;
     color: #b0a8ce;
     text-shadow: black 0.1em 0.1em 0.2em;
+    margin-left: 20px;
 
 }
 
@@ -179,7 +181,7 @@ div.dificuldade p{
 p {
     text-shadow: black 0.1em 0.1em 0.2em;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 0px;
 }
 
@@ -225,7 +227,7 @@ header{
 }
 
 .regrasText{
-    margin: 25px;
+    margin: 10px;
 }
 
 #pts{
@@ -298,6 +300,10 @@ header{
 
 @media screen and (min-width:600px) and (max-width:799px){
 
+    #box-regras{
+        margin-top: 80px;
+    }
+
     #cacapalavras{
         height: 680px;
         margin-bottom: 50px;
@@ -305,6 +311,11 @@ header{
   
     section{
         height: 50px;
+    }
+
+
+    .regrasText{
+        margin: 20px;
     }
 }
 
@@ -351,8 +362,19 @@ header{
         flex-direction: row;
     }
 
-    p{
+    h3.regrash3{
         font-size: 22px;
+
+    }
+
+
+    .regrasText{
+        margin: 20px;
+    }
+
+
+    p{
+        font-size: 20px;
         margin-bottom: 0px;
     }
 
@@ -443,12 +465,18 @@ header{
     }
 
     p{
-        font-size: 25px;
+        font-size: 22px;
         margin-bottom: 0px;
     }
 
     h3.regrash3 {
-        font-size: 38px;
+        font-size: 26px;
+        margin-left: 20px;
+    }
+
+
+    .regrasText{
+        margin: 10px;
     }
 
     #user{
