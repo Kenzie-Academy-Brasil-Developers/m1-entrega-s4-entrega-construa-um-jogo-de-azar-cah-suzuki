@@ -200,6 +200,10 @@ section{
     cursor: pointer;
 }
 
+section:hover{
+    box-shadow: 0 0 1em gold;
+}
+
 div{
     border-radius: 15px;
 }
