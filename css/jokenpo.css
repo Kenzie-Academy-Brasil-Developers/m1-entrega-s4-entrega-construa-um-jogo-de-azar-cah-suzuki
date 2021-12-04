@@ -7,7 +7,7 @@ figcaption{
 
 body{
     margin: 0;
-    background-image: url("../img-jokenpo/galaxy2.jpg");
+    background-image: url("../img-jokenpo/backgroundMobile.jpg");
     background-size: cover;
     font-family: 'Genos', sans-serif;
     color: white;
@@ -320,6 +320,10 @@ figure{
 }
 
 @media screen and (min-width:800px){
+body{
+     background-image: url("../img-jokenpo/galaxy2.jpg");
+     background-size: cover;
+}
  main{
      font-size: 22px; 
      flex-direction: row; 
@@ -365,6 +369,11 @@ figure{
  }
 
  @media screen and (min-width:800px) and (max-width:1100px){
+    body{
+        background-image: url("../img-jokenpo/galaxy2.jpg");
+        background-size: cover;
+    }
+
      .modal{
          margin-left: 100px;
      }
