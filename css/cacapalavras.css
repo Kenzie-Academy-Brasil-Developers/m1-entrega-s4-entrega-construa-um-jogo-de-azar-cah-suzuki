@@ -41,13 +41,13 @@ figcaption{
 }
 
 h2 {
-    font-size: 23px;
+    font-size: 2rem;
     font-family: 'Genos', sans-serif;
     color: white;
     text-shadow: #b0a8ce 0.1em 0.1em 0.2em;
-    margin-top: 30px;
-    margin-left: 70px;
-    margin-bottom: -12px;
+    align-self: center;
+    text-align: center;
+    grid-column: 1/-1;
 
 }
 
@@ -481,3 +481,4 @@ header{
     }
  
 }
+

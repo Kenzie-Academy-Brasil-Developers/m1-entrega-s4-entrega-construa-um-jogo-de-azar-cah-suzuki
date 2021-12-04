@@ -37,10 +37,9 @@ function reset(){
     score = []
     palavrasSelecionadas = []
     resposta = ''
-    let divs = document.querySelectorAll('section')
-    for(let i of divs){
-        main.removeChild(i)
-        }
+    while(main.lastChild){
+        main.lastChild.remove()
+    }
     tal = tabela()
 }
 
@@ -101,7 +100,9 @@ dif.addEventListener('click',(e)=> {
 
 btn.addEventListener('click',(e) => pts.value = 0)
 
-
+function removeDif(){
+    main.firstChild.remove()
+}
 //funcao que gera uma letra aleatória de a-z
 function randomLetter (){
     min = 97;
