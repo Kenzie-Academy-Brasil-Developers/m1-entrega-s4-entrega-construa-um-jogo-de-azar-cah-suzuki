@@ -99,10 +99,8 @@ dif.addEventListener('click',(e)=> {
 })
 
 btn.addEventListener('click',(e) => pts.value = 0)
+btn.addEventListener('click',reset)
 
-function removeDif(){
-    main.firstChild.remove()
-}
 //funcao que gera uma letra aleatória de a-z
 function randomLetter (){
     min = 97;
