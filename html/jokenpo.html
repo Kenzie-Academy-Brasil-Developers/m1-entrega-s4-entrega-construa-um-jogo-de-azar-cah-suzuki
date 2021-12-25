@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/jokenpo.css">
     <title>Jogos de Azar</title>
 </head>
 <body>
     <header>
         <figure>
-            <img src="../img/logo.png" alt="Logo galaxy">
+            <img src="../img-jokenpo/planet.png" alt="Logo galaxy">
             <figcaption>Logo galaxy</figcaption>
         </figure>
         <h1>Pedra Papel Tesoura</h1>
@@ -28,6 +29,26 @@
             </p>
 
         </div>
+
+        <div class="modal-bg">
+            <div class="modal">
+                <div class="header-do-modal">
+                    <figure>
+                        <img src="../img-jokenpo/happyPlanet.png" alt="Ilustração de planeta roxo sorridente">
+                        <figcaption>Ilustração de planeta sorridente</figcaption>
+                    </figure>
+                    <span id="nome-jogador-modal"></span>
+                </div>
+               
+                <p>Resultado da partida: </p>
+                <p class="resultP"></p>
+                <div id="modal-result"></div>               
+                
+                <button class="modal-btn">Sair / Jogar Novamente!</button>
+            </div>
+        </div>
+        <div class=container-dos-containers-dos-cards>
+
     <div class="container-acima">
   
         <div class="jogador">
@@ -39,13 +60,13 @@
             <div class="flip" id="cardUm">
                 <div class="card face" id="frontUm">
                     <figure>
-                        <img src="../img/pc.png" alt="Ilustração pc">
+                        <img src="../img-jokenpo/pc.png" alt="Ilustração pc">
                         <figcaption>Ilustração pc</figcaption>
                     </figure>
                 </div>
                 <div class="card face" id="backUm">
                     <figure>
-                        <img src="../img/pedra.png" alt="Ilustração pedra">
+                        <img src="../img-jokenpo/pedra.png" alt="Ilustração pedra">
                         <figcaption>Ilustração pedra</figcaption>
                     </figure>
                 </div>
@@ -53,15 +74,15 @@
             </div>
 
             <div class="flip" id="cardDois" >
-                <div class ="card face" id="frontDois">
+                <div class ="card face" id="frontDois" data-elemento="pedra" data-posicao="1" data-batata="cenoura">
                     <figure>
-                        <img src="../img/pc.png" alt="Ilustração pc">
+                        <img src="../img-jokenpo/pc.png" alt="Ilustração pc">
                         <figcaption>Ilustração pc</figcaption>
                     </figure>
                 </div>
                 <div class="card face" id="backDois">
                     <figure>
-                        <img src="../img/papel.png" alt="Ilustração papel">
+                        <img src="../img-jokenpo/papel.png" alt="Ilustração papel">
                         <figcaption>Ilustração papel</figcaption>
                     </figure>
 
@@ -71,45 +92,38 @@
             <div class="flip" id="cardTres">
                 <div  class="card face" id="frontTres">
                     <figure>
-                        <img src="../img/pc.png" alt="Ilustração pc">
+                        <img src="../img-jokenpo/pc.png" alt="Ilustração pc">
                         <figcaption>Ilustração pc</figcaption>
                     </figure>
                 </div>
                 <div class="face" id="backTres">
                     <figure>
-                        <img src="../img/tesoura.png" alt="Ilustração tesoura">
+                        <img src="../img-jokenpo/tesoura.png" alt="Ilustração tesoura">
                         <figcaption>Ilustração tesoura</figcaption>
                     </figure>
 
                 </div>
             </div>
         </div>
-      
-<!-- Acrescentar essa label ao index html
-            <label>Jogador: </label>
-            <input type="text" name="name" id="nameUser" placeholder="Digite seu nome ou apelido" onchange="handleChange()"> -->
-   
-<!-- 
-        <a href="page.html" id="link1">Link</a> -->
 
     </div>
     <div class="container-abaixo">
         <div class="jogador">
             <span>Jogador: </span>
-            <span>Camila</span>
+            <span id="nome-jogador"></span>
 
         </div>
         <div class="card player-pedra">
             <div class="flip" id="cardQuatro">
                 <div class="card face" id="frontQuatro">
                     <figure>
-                        <img src="../img/pedra.png" alt="Ilustração pc">
+                        <img src="../img-jokenpo/pedra.png" alt="Ilustração pc">
                         <figcaption>Ilustração pc</figcaption>
                     </figure>
                 </div>
                 <div class="card face" id="backQuatro">
                     <figure>
-                        <img src="../img/player.png" alt="Ilustração pedra">
+                        <img src="../img-jokenpo/player.png" alt="Ilustração pedra">
                         <figcaption>Ilustração pedra</figcaption>
                     </figure>
                 </div>
@@ -119,13 +133,13 @@
             <div class="flip" id="cardCinco" >
                 <div class ="card face" id="frontCinco">
                     <figure>
-                        <img src="../img/papel.png" alt="Ilustração pc">
+                        <img src="../img-jokenpo/papel.png" alt="Ilustração pc">
                         <figcaption>Ilustração pc</figcaption>
                     </figure>
                 </div>
                 <div class="card face" id="backCinco">
                     <figure>
-                        <img src="../img/player.png" alt="Ilustração papel">
+                        <img src="../img-jokenpo/player.png" alt="Ilustração papel">
                         <figcaption>Ilustração papel</figcaption>
                     </figure>
 
@@ -135,13 +149,13 @@
             <div class="flip" id="cardSeis">
                 <div  class="card face" id="frontSeis">
                     <figure>
-                        <img src="../img/tesoura.png" alt="Ilustração pc">
+                        <img src="../img-jokenpo/tesoura.png" alt="Ilustração pc">
                         <figcaption>Ilustração pc</figcaption>
                     </figure>
                 </div>
                 <div class="face" id="backSeis">
                     <figure>
-                        <img src="../img/player.png" alt="Ilustração tesoura">
+                        <img src="../img-jokenpo/player.png" alt="Ilustração tesoura">
                         <figcaption>Ilustração tesoura</figcaption>
                     </figure>
 
@@ -149,63 +163,8 @@
 
         </div>
     </div>
+</div>
 </main>
-
-   <script>
-    const card =document.querySelector("#cardUm")
-    const cardDois = document.querySelector("#cardDois")
-    const cardTres = document.querySelector("#cardTres")
-    const cardQuatro =document.querySelector("#cardQuatro")
-    const cardCinco = document.querySelector("#cardCinco")
-    const cardSeis = document.querySelector("#cardSeis")
-
-      cardQuatro.addEventListener("click",(e)=>{
-                
-        if (!cardQuatro.classList.contains("flip")) {
-            cardQuatro.classList.toggle("flip")
-        }
-        if (cardCinco.classList.contains("flip")){
-            cardCinco.classList.toggle("flip")
-        }
-        if (cardSeis.classList.contains("flip")){
-            cardSeis.classList.toggle("flip")
-        }
-    })
-
-    cardCinco.addEventListener("click",(e)=>{
-        if (!cardCinco.classList.contains("flip")) {
-            cardCinco.classList.toggle("flip")
-        }
-        if (cardQuatro.classList.contains("flip")){
-            cardQuatro.classList.toggle("flip")
-        }
-        if (cardSeis.classList.contains("flip")){
-            cardSeis.classList.toggle("flip")
-        }
-     
-  
-     
-    })
-
-    cardSeis.addEventListener("click",(e)=>{
-        let local=e.currentTarget
-        console.log(local)
-      
-        if (!cardSeis.classList.contains("flip")) {
-            cardSeis.classList.toggle("flip")
-        }
-        if (cardQuatro.classList.contains("flip")){
-            cardQuatro.classList.toggle("flip")
-        }
-        if (cardCinco.classList.contains("flip")){
-            cardCinco.classList.toggle("flip")
-        }
-    })
-</script>
-
-<footer>
-
-</footer>
-  <script src="../js/jokenpo.js"></script>
+ <script src="../js/jokenpo.js"></script>
 </body>
 </html>

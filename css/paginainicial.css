@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Genos&display=swap');
+
+header {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2em;
+    text-shadow: rgb(167, 144, 221) 0.1em 0.1em 0.2em;;
+}
+
+label {
+    margin-top: 50px;
+    font-size: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 46px;
+}
+
+body {
+    background-image: url("../img-paginainicial/wpp3.jpg");
+    background-size: cover;
+    font-family: 'Genos', sans-serif;
+    color: white;
+}
+
+section {
+    display:flex;
+    flex-direction: column;
+    height: 540px;
+    margin-top: 50px;
+    align-items: center;
+}
+
+.link1 {
+    height: 240px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4c1c4675;
+    box-shadow: black 0.1em 0.1em 0.2em;
+    border-radius: 2em;
+}
+
+.link1:hover {
+    transition: 0.7s;
+    box-shadow: rgb(167, 144, 221) 0.1em 0.1em 0.2em;
+}
+
+.link2 {
+    height: 240px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4c1c4675;
+    box-shadow: black 0.1em 0.1em 0.2em;
+    border-radius: 2em;
+    margin-top: 50px;
+}
+
+figure{
+    width: 100px;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+figcaption{
+    font-size: 22px;
+    margin-top: 5px;
+}
+
+a {    
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    color: black
+}
+
+.link2:hover {
+    transition: 0.7s;
+    box-shadow: rgb(167, 144, 221) 0.1em 0.1em 0.2em;
+    }
+
+
+#form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#item {
+    padding-left: 70px;
+}
+
+
+input {
+    background-color: rgba(167, 144, 221, 0.651) ;
+    border: 1px solid transparent;
+    margin-top: 15px;
+    border-radius: 2em;
+    width: 161px;
+    height: 40px;
+    color: white;
+}
+
+input::placeholder {
+    color: white;
+  }
+
+button {
+    background-color: transparent;
+    border-style: none;
+    color: white;
+    border: 1px solid;
+    margin-top: 10px;
+
+}
+.groupMembers {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+    padding-right: 15px;
+    font-size: 10px;
+    color: white;
+    background-color: #4c1c4667;
+    border-radius: 2em;
+}
+
+@media screen and (min-width: 800px){
+
+    
+    body {
+        height: 800px;
+        border: 1px solid white;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 72px;
+    }
+
+    section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: -30px;
+    }
+
+    a {
+        font-size: 40px;
+    }
+
+    label {
+        font-size: 26px;
+    }
+
+    .link1 {
+        width: 25%;
+        height: 300px;
+        margin-right: 100px;
+    }
+
+    .link2 {
+        width: 25%;
+        height: 300px;
+        margin-top: 0px;
+    }
+
+    figure{
+        width: 150px;
+        text-align: center;
+    }
+    
+    img {
+        width: 100%;
+    }
+   
+    .inputButton { 
+       
+        height: 50px;
+    }
+
+    .groupMembers {
+        margin-top: 107px;
+        background-color: transparent;
+    }
+
+    footer {
+        width: 100%;
+    }
+
+    button {
+        width: 100px;
+    }
+}
