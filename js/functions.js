@@ -5,6 +5,7 @@ let btn = document.querySelector(".rstBtn")
 let wBtn = document.querySelector(".winBtn")
 let wScrn = document.querySelector("#vitoria")
 let usrName = document.querySelector("#user")
+let possiveis = document.querySelector('#possiveisPalavras')
 
 //pegar o nome de usuário da pagina inicial
 const queryString = window.location.search
@@ -57,6 +58,7 @@ function reset() {
 		main.lastChild.remove()
 	}
 	tal = tabela()
+    possiveis.innerText = ''
 }
 
 function winCondition() {
@@ -67,22 +69,34 @@ function winCondition() {
 			palavraTabelaFacil()
 			pts.value = pontuacao
 			wScrn.classList.toggle("hidden")
+            wordDisplay()
 		} else if (score.length === 2) {
 			reset()
 			palavraTabelaFacil()
 			pontuacao += 10
 			pts.value = pontuacao
 			wScrn.classList.toggle("hidden")
+            wordDisplay()
 		} else if (score.length === 3) {
 			reset()
 			palavraTabelaDificil()
 			pontuacao += 15
 			pts.value = pontuacao
 			wScrn.classList.toggle("hidden")
+            wordDisplay()
 		}
 	}
 }
 wBtn.addEventListener("click", () => wScrn.classList.toggle("hidden"))
+
+main.addEventListener("contextmenu", (e) => {
+	let div = e.target
+    e.preventDefault()
+    if(div.tagName === "SECTION" && div.style.backgroundColor === 'green'){
+    resposta = removeLetter()
+    div.style.backgroundColor = 'inherit'
+    }
+})
 
 main.addEventListener("click", (e) => {
 	let div = e.target
@@ -95,6 +109,9 @@ main.addEventListener("click", (e) => {
 		resposta = ""
 	}
 })
+
+
+
 main.addEventListener("click", winCondition)
 
 dif.addEventListener("click", (e) => {
@@ -103,14 +120,17 @@ dif.addEventListener("click", (e) => {
 		reset()
 		palavraTabelaFacil()
 		numeroDePalavras = 1
+        wordDisplay()
 	} else if (link.id === "dmedio") {
 		reset()
 		palavraTabelaFacil()
 		numeroDePalavras = 2
+        wordDisplay()
 	} else if (link.id === "ddificil") {
 		reset()
 		palavraTabelaDificil()
 		numeroDePalavras = 3
+        wordDisplay()
 	}
 })
 
@@ -163,6 +183,7 @@ function palavraTabelaFacil() {
 
 	//eviar a palavra para o array de palavras selecionadas para verificaçao
 	palavrasSelecionadas.push(test.join(""))
+
 
 	//teste para averiguar se a palavra cabe na diagonal
 	while (test.length + linha > tal.length - 1) {
@@ -384,4 +405,20 @@ function palavraTabelaDificil() {
 			main.appendChild(div)
 		}
 	}
+}
+
+function wordDisplay() {
+    for(let i of palavrasSelecionadas){
+        if(i !== palavrasSelecionadas[palavrasSelecionadas.length-1]){
+        possiveis.append(` ${i} ,`)
+        }else{
+            possiveis.append(` ${i}.`)
+        }
+    }
+}
+
+function removeLetter(){
+    let r = resposta.split('')
+    r.pop()
+    return r.join('')
 }
