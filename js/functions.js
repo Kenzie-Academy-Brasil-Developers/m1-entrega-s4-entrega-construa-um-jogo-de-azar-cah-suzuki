@@ -18,8 +18,6 @@ if(userName === null){
     usrName.value = userName
 }
 
-
-
 // array de possiveis palavras 
 let palavrasRaiz = ['dimensao', 'satelites', 'cometas', 'gravidade', 'nebulosas', 'densidade', 'energia', 'colapso', 'teoria', 'nuvens', 'espaço', 'cosmos', 'andromeda' ,'hawking' , 'einstein', 'sagan','atomo']
 
@@ -37,10 +35,9 @@ function reset(){
     score = []
     palavrasSelecionadas = []
     resposta = ''
-    let divs = document.querySelectorAll('section')
-    for(let i of divs){
-        main.removeChild(i)
-        }
+    while(main.lastChild){
+        main.lastChild.remove()
+    }
     tal = tabela()
 }
 
@@ -99,7 +96,19 @@ dif.addEventListener('click',(e)=> {
     }
 })
 
-btn.addEventListener('click',(e) => pts.value = 0)
+btn.addEventListener('click',btnReset)
+
+usrName.addEventListener('keydown',btnReset)
+
+function btnReset(){
+    let sections = document.querySelectorAll('section')
+    for(let i of sections){
+        i.style.backgroundColor = 'inherit'
+    }
+    resposta = ''
+    score = []
+    pts.value = 0
+}
 
 
 //funcao que gera uma letra aleatória de a-z
