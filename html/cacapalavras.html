@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caça Palavras</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/cacapalavras.css">
+    <script src="../js/functions.js" defer></script>
+</head>
+
+<body>
+    <div class="/container-overlay-header">
+        <header>
+            <a href="/index.html">
+                <img alt="home" src="/img-cacapalavras/pagina-inicial.png">
+             </a>
+            <div class="dificuldade">
+                <p>Dificuldade:</p>
+                <a id='dfacil' href="#">Fácil</a>
+                <span>|</span>
+                <a id='dmedio' href="#">Médio</a>
+                <span>|</span>
+                <a id='ddificil' href="#">Difícil</a>
+            </div>
+            <div class="container-user-pontos">
+                <div class="user">
+                    <label for="user">Usuário</label>
+                    <input type="text" id="user" name="user">
+                </div>
+                <div class="pontos">
+                    <label for="pts">Pontuação</label>
+                    <input type="text" id="pts" name="pts">
+                </div>
+            </div>
+            <button class='rstBtn'>Reset</button>
+        </header>
+    </div>
+
+<div class="container-overlay">  
+    <div id="box-regras">
+        <div class="facil">
+            <h3 class="regrash3">Como Jogar:</h3>
+            <p class="regrasText">Escolha um dos níveis de dificuldade e clique para visualizar o caça palavras!</p>
+            <h3 class="regrash3">Lista de Palavras que podem ser encontradas no caça palavras : </h3>
+            <P id="possiveisPalavras"></P>
+            <h3 class="regrash3">Regras:</h3>
+            <p class="regrasText">Três palavras estão escondidas neste emaranhado de letras, as palavras estão dispostas
+                em direções diferentes de acordo com a dificuldade. Será que você consegue encontrar? Clique e pinte os
+                quadradinhos.
+                Caso tiver escolhido uma letra errada , basta usar o botão direito do mouse para desselecionar a letra :)
+            </p>
+            <p>Fácil: 1 palavra (5 pts)</p>
+            <p>Medio: 2 palavras (10 pts)</p>
+            <p>Dificil: 3 palavras Invertidas (15 pts)</p>
+        </div>
+
+        <div id="cacapalavras">
+            <h2>Escolha a Dificuldade !!</h2> 
+        </div>
+    </div>
+</div>  
+<div id="vitoria" class='hidden'>
+    <p id='pVitoria'>Parabéns você ganhou!!! :)</p>
+    <button class="winBtn">👽</button>
+</div>
+</body>
+
+</html>
